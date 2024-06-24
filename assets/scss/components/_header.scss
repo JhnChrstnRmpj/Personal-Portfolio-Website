@@ -1,0 +1,35 @@
+header {
+  position: relative;
+  & .container {
+    width: 100%;
+    height: 100%;
+    padding: em(20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .wrapper {
+      background-color: #EAEAE9;
+      width: 100%;
+      // max-width: em(600);
+      padding: em(10) em(30);
+      border: em(2) solid #fff;
+
+      & nav {
+        height: em(50);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & .rightNav {
+          display: flex;
+          gap: em(30);
+
+          & p {
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}

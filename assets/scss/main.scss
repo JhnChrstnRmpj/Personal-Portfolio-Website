@@ -1,0 +1,63 @@
+//? screen References
+$screen-lg: 1920;
+$screen-md: 900;
+$screen-sm: 400 ;
+
+//? Default Sizes
+$defaultFontSize: 16;
+$referenceWidth: 1920;
+
+@function em($pixels, $defaultFontSize: $defaultFontSize) {
+  @return #{calc($pixels / $defaultFontSize)}em;
+}
+@function vw($pixels, $referenceWidth: referenceWidth) {
+  @return #{calc($pixels / $referenceWidth) * 100}vw;
+}
+@function lh($fontSize, $lineHeight) {
+  @return #{calc($lineHeight / $fontSize)};
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+*[animated] {
+  opacity: 0;
+}
+
+@import "./base/base";
+@import "./components/components";
+
+* {
+  font-family: $primaryFont;
+  font-size: 16px;
+  color: $black;
+  @include lg {
+    font-size: vw(16, $screen-lg);
+  }
+  @include md {
+    font-size: vw(16.5, $screen-md);
+  }
+  @include sm {
+    font-size: vw(17.2, $screen-sm);
+  }
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  ::selection {
+    color: $black;
+    background-color: $white;
+  }
+}

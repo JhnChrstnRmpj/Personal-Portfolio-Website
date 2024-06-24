@@ -1,0 +1,20 @@
+.tag {
+  width: fit-content;
+  // padding: em(4) em(12);
+  // background-color: $black;
+  // border: em(1) solid $black;
+  // border-radius: em(10);
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  gap: em(10);
+
+  & span {
+    letter-spacing: em(2);
+    // text-transform: uppercase;
+    font-size: em(14);
+    font-weight: 500;
+    // color: $white;
+  }
+}

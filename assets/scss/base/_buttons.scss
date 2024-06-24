@@ -1,0 +1,42 @@
+//BUTTON FOR CAROUSEL
+.carouselNav {
+    // opacity: 0.5;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    bottom: 45%;
+    padding: 0 em(20);
+    @include sm {
+        display: none;
+    }
+    & > button {
+        position: relative;
+        cursor: pointer;
+        width: em(50);
+        height: em(50);
+        border-radius: 100%;
+        border: 1px solid #EAE1D6;
+        background-color: #EAE1D6;
+        &::after {
+            background: url("/assets/images/icons/arrow-left-black.svg") center center/50% no-repeat;
+            content: "";
+            position: absolute;
+            width: em(25);
+            height: em(25);
+        }
+        &.btnPrevCarousel {
+            &::after {
+                left: 20%;
+                top: 25%;
+            }
+        }
+        &.btnNextCarousel {
+            transform: rotate(180deg);
+            &::after {
+                left: 20%;
+                top: 25%;
+            }
+        }
+    }
+}
