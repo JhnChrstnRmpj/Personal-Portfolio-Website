@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/assets/fonts/Roboto-Regular.ttf")format("TrueType");
+}
+
+$primaryFont:  "Space Mono", monospace;
+// $primaryFont:   "Sora", sans-serif;
+// $primaryFont: "Roboto";
+
+@mixin textStyle($size, $weight, $lineHeight, $letterSpacing: normal) {
+  font-family: $primaryFont;
+  font-size: em($size);
+  font-weight: $weight;
+  line-height: $lineHeight;
+  letter-spacing: em($letterSpacing);
+}
+
+h1 {
+  @include textStyle(72, 500, 100%, -0.02);
+  @include sm {
+    @include textStyle(56, 500, 100%, -0.02);
+  }
+}
+
+h2 {
+  @include textStyle(56, 500, 120%, -0.02);
+  @include sm {
+    @include textStyle(48, 500, 120%, -0.02);
+  }
+}
+
+h3 {
+  @include textStyle(40, 500, 120%, -0.02);
+}
+
+h4 {
+  @include textStyle(32, 500, 130%, -0.02);
+}
+
+h5 {
+  @include textStyle(24, 500, 140%, -0.01);
+}
+
+h6 {
+  @include textStyle(20, 500, 140%, -0.01);
+}
+
+p {
+  @include textStyle(16, 400, 140%);
+}
+
+span {
+  font-weight: 500;
+  font-family: $primaryFont;
+  font-size: em(14);
+  line-height: em(30);
+}

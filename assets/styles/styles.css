@@ -1,0 +1,663 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  scroll-behavior: smooth;
+}
+* ::-webkit-scrollbar {
+  display: none;
+}
+
+*[animated] {
+  opacity: 0;
+}
+
+.carouselNav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  bottom: 45%;
+  padding: 0 1.25em;
+}
+@media (max-width: 400px) {
+  .carouselNav {
+    display: none;
+  }
+}
+.carouselNav > button {
+  position: relative;
+  cursor: pointer;
+  width: 3.125em;
+  height: 3.125em;
+  border-radius: 100%;
+  border: 1px solid #EAE1D6;
+  background-color: #EAE1D6;
+}
+.carouselNav > button::after {
+  background: url("/assets/images/icons/arrow-left-black.svg") center center/50% no-repeat;
+  content: "";
+  position: absolute;
+  width: 1.5625em;
+  height: 1.5625em;
+}
+.carouselNav > button.btnPrevCarousel::after {
+  left: 20%;
+  top: 25%;
+}
+.carouselNav > button.btnNextCarousel {
+  transform: rotate(180deg);
+}
+.carouselNav > button.btnNextCarousel::after {
+  left: 20%;
+  top: 25%;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/assets/fonts/Roboto-Regular.ttf") format("TrueType");
+}
+h1 {
+  font-family: "Space Mono", monospace;
+  font-size: 4.5em;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.00125em;
+}
+@media (max-width: 400px) {
+  h1 {
+    font-family: "Space Mono", monospace;
+    font-size: 3.5em;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.00125em;
+  }
+}
+
+h2 {
+  font-family: "Space Mono", monospace;
+  font-size: 3.5em;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.00125em;
+}
+@media (max-width: 400px) {
+  h2 {
+    font-family: "Space Mono", monospace;
+    font-size: 3em;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.00125em;
+  }
+}
+
+h3 {
+  font-family: "Space Mono", monospace;
+  font-size: 2.5em;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.00125em;
+}
+
+h4 {
+  font-family: "Space Mono", monospace;
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: -0.00125em;
+}
+
+h5 {
+  font-family: "Space Mono", monospace;
+  font-size: 1.5em;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: -0.000625em;
+}
+
+h6 {
+  font-family: "Space Mono", monospace;
+  font-size: 1.25em;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: -0.000625em;
+}
+
+p {
+  font-family: "Space Mono", monospace;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: calc(normal / 16)em;
+}
+
+span {
+  font-weight: 500;
+  font-family: "Space Mono", monospace;
+  font-size: 0.875em;
+  line-height: 1.875em;
+}
+
+.card {
+  border-radius: 1.25em;
+  padding: 1.875em;
+  box-shadow: 1px 7px 12px 0px rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 1px 7px 12px 0px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 1px 7px 12px 0px rgba(0, 0, 0, 0.19);
+  background-color: #EAE1D6;
+}
+
+.tag {
+  width: fit-content;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  gap: 0.625em;
+}
+.tag span {
+  letter-spacing: 0.125em;
+  font-size: 0.875em;
+  font-weight: 500;
+}
+
+.grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  z-index: -1;
+  transform: translateZ(0);
+}
+.grain:before {
+  content: "";
+  top: -10rem;
+  left: -10rem;
+  width: calc(100% + 20rem);
+  height: calc(100% + 20rem);
+  z-index: 9999;
+  position: fixed;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
+  opacity: 0.15;
+  pointer-events: none;
+  -webkit-animation: noise 1s steps(2) infinite;
+  animation: noise 1s steps(2) infinite;
+}
+@-webkit-keyframes noise {
+  to {
+    transform: translate3d(-7rem, 0, 0);
+  }
+}
+@keyframes noise {
+  0% {
+    transform: translate3d(0, 9rem, 0);
+  }
+  10% {
+    transform: translate3d(-1rem, -4rem, 0);
+  }
+  20% {
+    transform: translate3d(-8rem, 2rem, 0);
+  }
+  30% {
+    transform: translate3d(9rem, -9rem, 0);
+  }
+  40% {
+    transform: translate3d(-2rem, 7rem, 0);
+  }
+  50% {
+    transform: translate3d(-9rem, -4rem, 0);
+  }
+  60% {
+    transform: translate3d(2rem, 6rem, 0);
+  }
+  70% {
+    transform: translate3d(7rem, -8rem, 0);
+  }
+  80% {
+    transform: translate3d(-9rem, 1rem, 0);
+  }
+  90% {
+    transform: translate3d(6rem, -5rem, 0);
+  }
+  to {
+    transform: translate3d(-7rem, 0, 0);
+  }
+}
+
+header {
+  position: relative;
+}
+header .container {
+  width: 100%;
+  height: 100%;
+  padding: 1.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .container .wrapper {
+  background-color: #EAEAE9;
+  width: 100%;
+  padding: 0.625em 1.875em;
+  border: 0.125em solid #fff;
+}
+header .container .wrapper nav {
+  height: 3.125em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .container .wrapper nav .rightNav {
+  display: flex;
+  gap: 1.875em;
+}
+header .container .wrapper nav .rightNav p {
+  font-weight: 400;
+}
+
+section.bentoGrid {
+  position: relative;
+  padding-bottom: 1.25em;
+  padding: 0 1.25em;
+  height: 100vh;
+}
+section.bentoGrid .container {
+  width: 100%;
+  height: 100%;
+}
+section.bentoGrid .container .wrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 1.25em;
+}
+section.bentoGrid .container .wrapper .card {
+  width: 100%;
+  height: 100%;
+  border: 0.125em solid #FFF;
+  background-color: #EAEAE9;
+}
+section.bentoGrid .container .wrapper .card-1 {
+  grid-area: 1/1/4/4;
+}
+section.bentoGrid .container .wrapper .card-2 {
+  grid-area: 4/1/5/4;
+}
+section.bentoGrid .container .wrapper .card-3 {
+  grid-area: 1/4/2/7;
+}
+section.bentoGrid .container .wrapper .card-5 {
+  grid-area: 5/1/7/3;
+}
+section.bentoGrid .container .wrapper .card-6 {
+  grid-area: 5/3/7/5;
+}
+section.bentoGrid .container .wrapper .card-7 {
+  grid-area: 5/5/7/7;
+}
+section.bentoGrid .container .wrapper .card .about-card {
+  width: 100%;
+  height: 100%;
+  padding: 4.375em 3.125em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+section.bentoGrid .container .wrapper .card .about-card h1 {
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+section.bentoGrid .container .wrapper .card .tape {
+  width: 100%;
+  height: 100%;
+  padding: 2.5em 0;
+  overflow: hidden;
+  position: relative;
+}
+section.bentoGrid .container .wrapper .card .tape::before, section.bentoGrid .container .wrapper .card .tape::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 10%;
+  height: 100%;
+  z-index: 1;
+  border-radius: 50px;
+}
+section.bentoGrid .container .wrapper .card .tape::before {
+  left: 0;
+  background: linear-gradient(to right, #EAEAE9 0%, rgba(255, 255, 255, 0) 100%);
+}
+section.bentoGrid .container .wrapper .card .tape::after {
+  right: 0;
+  background: linear-gradient(to left, #EAEAE9 0%, rgba(255, 255, 255, 0) 100%);
+}
+section.bentoGrid .container .wrapper .card .tape .carousel-text {
+  margin: 0 0.875em;
+  display: inline-block;
+}
+section.bentoGrid .container .wrapper .card .tape .carousel-text p {
+  letter-spacing: 0.125em;
+}
+section.bentoGrid .container .wrapper .card .tape .carousel-text .box-space {
+  width: 0.625em;
+  height: 0.625em;
+  background-color: #0A0A0A;
+  display: inline-block;
+}
+section.bentoGrid .container .wrapper .card-4 {
+  grid-area: 2/4/5/7;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1.25em;
+}
+section.bentoGrid .container .wrapper .card-4 .smallCard {
+  border: 0.125em solid #fff;
+  background-color: #EAEAE9;
+}
+section.bentoGrid .container .wrapper .card-4 .smallCard-1 {
+  grid-area: 1/1/3/3;
+}
+section.bentoGrid .container .wrapper .card-4 .smallCard-2 {
+  grid-area: 1/3/3/5;
+}
+section.bentoGrid .container .wrapper .card-4 .smallCard-3 {
+  grid-area: 3/1/5/3;
+}
+section.bentoGrid .container .wrapper .card-4 .smallCard-4 {
+  grid-area: 3/3/5/5;
+}
+
+section.theatreSlider {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #EEEEEE;
+}
+section.theatreSlider > .container {
+  width: 100%;
+  display: flex;
+}
+section.theatreSlider > .container > .wrapper {
+  width: 100%;
+  display: flex;
+  position: relative;
+  padding: 5em 0 0 0;
+  flex-direction: column;
+}
+@media (max-width: 400px) {
+  section.theatreSlider > .container > .wrapper {
+    padding: 4em 1.25em;
+  }
+}
+section.theatreSlider > .container > .wrapper > .carouselContainer {
+  width: 100%;
+  margin-bottom: 2.5em;
+}
+section.theatreSlider > .container > .wrapper > .carouselContainer > .carouselWrapper .theatreCard {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1.25em;
+  padding-left: 1.25em;
+  margin-bottom: 2.5em;
+}
+section.theatreSlider > .container > .wrapper > .carouselContainer > .carouselWrapper .theatreCard > .imgWrapper {
+  width: 43.75em;
+  height: 25em;
+  margin-bottom: 1.5em;
+}
+@media (max-width: 400px) {
+  section.theatreSlider > .container > .wrapper > .carouselContainer > .carouselWrapper .theatreCard > .imgWrapper {
+    width: 20.75em;
+    height: 20.75em;
+  }
+}
+section.theatreSlider > .container > .wrapper > .carouselContainer > .carouselWrapper .theatreCard > .imgWrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+section.theatreSlider > .container > .wrapper > .carouselContainer > .carouselWrapper .theatreCard > .descWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5625em;
+}
+@media (max-width: 400px) {
+  section.theatreSlider > .container > .wrapper > .carouselContainer > .carouselWrapper .theatreCard > .descWrapper {
+    width: 100%;
+  }
+}
+section.theatreSlider > .container > .wrapper .bottomColumn {
+  border-top: 0.1875em solid #0A0A0A;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25em;
+}
+section.theatreSlider > .container > .wrapper .bottomColumn h1 {
+  font-size: 6.25em;
+}
+
+section.bento {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+section.bento .container {
+  width: 100%;
+  height: 100%;
+  padding: 1.25em;
+}
+section.bento .container .wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+}
+section.bento .container .wrapper .block {
+  width: 100%;
+  border-radius: 1.25em;
+}
+section.bento .container .wrapper .block.top-block {
+  height: calc(45vh - 2.5em);
+  display: flex;
+  gap: 1.25em;
+}
+@media (max-width: 400px) {
+  section.bento .container .wrapper .block.top-block {
+    flex-direction: column;
+  }
+}
+section.bento .container .wrapper .block.top-block .top-card-left {
+  position: relative;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (max-width: 400px) {
+  section.bento .container .wrapper .block.top-block .top-card-left {
+    width: 100%;
+  }
+}
+section.bento .container .wrapper .block.top-block .top-card-left .top-content {
+  display: flex;
+  gap: 1.25em;
+}
+section.bento .container .wrapper .block.top-block .top-card-left h2 {
+  font-weight: 900;
+  letter-spacing: -0.09375em;
+}
+section.bento .container .wrapper .block.top-block .top-card-left h5 {
+  opacity: 0.8;
+  letter-spacing: -0.025em;
+}
+section.bento .container .wrapper .block.top-block .top-card-left h5 span {
+  font-weight: 600;
+}
+section.bento .container .wrapper .block.top-block .top-card-left h6 {
+  letter-spacing: -0.05em;
+}
+section.bento .container .wrapper .block.top-block .top-card-left .circle {
+  width: 0.625em;
+  height: 0.625em;
+  border-radius: 100%;
+  background-color: green;
+}
+section.bento .container .wrapper .block.top-block .top-card-left .bottom-content {
+  display: flex;
+  margin-bottom: 1.25em;
+}
+section.bento .container .wrapper .block.top-block .top-card-right {
+  width: 40vw;
+}
+@media (max-width: 400px) {
+  section.bento .container .wrapper .block.top-block .top-card-right {
+    width: 100%;
+  }
+}
+section.bento .container .wrapper .block.middle-block {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 4vh;
+  padding: 0.625em;
+}
+@media (max-width: 900px) {
+  section.bento .container .wrapper .block.middle-block {
+    height: 5vh;
+  }
+}
+section.bento .container .wrapper .block.middle-block .carouselWrapper {
+  width: 100%;
+}
+section.bento .container .wrapper .block.middle-block .carouselWrapper .carousel-text {
+  height: 100%;
+  margin: 0 1.25em;
+  display: inline-block;
+}
+section.bento .container .wrapper .block.middle-block .carouselWrapper .carousel-text p {
+  letter-spacing: 0.125em;
+}
+section.bento .container .wrapper .block.middle-block .carouselWrapper .carousel-text .box-space {
+  width: 0.625em;
+  height: 0.625em;
+  background-color: #0A0A0A;
+  display: inline-block;
+}
+section.bento .container .wrapper .block.bottom-block {
+  width: 100%;
+  height: calc(55vh - 2.5em);
+  display: flex;
+  flex-direction: row;
+  gap: 1.25em;
+}
+@media (max-width: 400px) {
+  section.bento .container .wrapper .block.bottom-block {
+    flex-direction: column;
+  }
+}
+section.bento .container .wrapper .block.bottom-block .bottom-card {
+  border-radius: 1.25em;
+  padding: 1.25em;
+  box-shadow: 1px 7px 12px 0px rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 1px 7px 12px 0px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 1px 7px 12px 0px rgba(0, 0, 0, 0.19);
+}
+section.bento .container .wrapper .block.bottom-block .bottom-card-left {
+  width: 35vw;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+@media (max-width: 400px) {
+  section.bento .container .wrapper .block.bottom-block .bottom-card-left {
+    width: 100%;
+  }
+}
+section.bento .container .wrapper .block.bottom-block .bottom-card-left > .carouselWrapper .theatreCard {
+  display: flex;
+  flex-direction: column;
+}
+section.bento .container .wrapper .block.bottom-block .bottom-card-left > .carouselWrapper .theatreCard > .imgWrapper > img {
+  width: 100%;
+  min-height: 51vh;
+  object-fit: cover;
+}
+section.bento .container .wrapper .block.bottom-block .bottom-card-left > .carouselWrapper .theatreCard > .descWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5625em;
+}
+@media (max-width: 400px) {
+  section.bento .container .wrapper .block.bottom-block .bottom-card-left > .carouselWrapper .theatreCard > .descWrapper {
+    width: 100%;
+  }
+}
+section.bento .container .wrapper .block.bottom-block .bottom-card-center {
+  height: 100%;
+  width: calc((55vh - 2.5em) / 2);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+}
+@media (max-width: 400px) {
+  section.bento .container .wrapper .block.bottom-block .bottom-card-center {
+    width: 100%;
+  }
+}
+section.bento .container .wrapper .block.bottom-block .bottom-card-center .skills-card {
+  width: 100%;
+  height: 50%;
+}
+section.bento .container .wrapper .block.bottom-block .bottom-card-right {
+  flex: 1;
+}
+
+* {
+  font-family: "Space Mono", monospace;
+  font-size: 16px;
+  color: #0A0A0A;
+}
+@media (max-width: 1920px) {
+  * {
+    font-size: 0.8333333333vw;
+  }
+}
+@media (max-width: 900px) {
+  * {
+    font-size: 1.8333333333vw;
+  }
+}
+@media (max-width: 400px) {
+  * {
+    font-size: 4.3vw;
+  }
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+body ::selection {
+  color: #0A0A0A;
+  background-color: #EEEEEE;
+}
+
+/*# sourceMappingURL=styles.css.map */

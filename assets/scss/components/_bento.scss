@@ -1,0 +1,192 @@
+section.bento {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+
+  & .container {
+    width: 100%;
+    height: 100%;
+    padding: em(20);
+
+    & .wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: em(20);
+
+      & .block {
+        width: 100%;
+        border-radius: em(20);
+
+        &.top-block {
+          height: calc(45vh - em(40));
+          display: flex;
+          gap: em(20);
+          @include sm {
+            flex-direction: column;
+          }
+
+          & .top-card {
+
+            &-left {
+              position: relative;
+              width: 60vw;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              
+              @include sm{
+                width: 100%;
+              }
+
+              & .top-content {
+                display: flex;
+                gap: em(20);
+                
+              }
+              h2{
+                font-weight: 900;
+                letter-spacing:em(-1.5);
+              }
+              h5{
+                opacity: 0.8;
+                letter-spacing:em(-0.4);
+                & span{
+                  font-weight: 600;
+                }
+              }
+              h6{
+                letter-spacing:em(-0.8);
+              }
+              & .circle{
+                width: em(10);
+                height: em(10);
+                border-radius: 100%;
+                background-color: green;
+              }
+              & .bottom-content {
+                display: flex;
+                margin-bottom:em(20);
+              }
+            } 
+            &-right { 
+              width: 40vw;
+              @include sm{
+                width: 100%;
+              }
+            }
+          }
+        }
+  
+        &.middle-block {
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          height: 4vh;
+          padding: em(10);
+          @include md {
+            height: 5vh;
+          }
+          
+          & .carouselWrapper {
+            width: 100%;
+
+            & .carousel-text {
+              height: 100%;
+              margin: 0 em(20);
+              display: inline-block;
+  
+              & p {
+                letter-spacing: em(2);
+              }
+  
+              & .box-space {
+                width: em(10);
+                height: em(10);
+                background-color: #0A0A0A;
+                display: inline-block;
+              }
+            }
+          }
+        }
+  
+        &.bottom-block {
+          width: 100%;
+          height: calc(55vh - em(40));
+          display: flex;
+          flex-direction: row;
+          gap: em(20);
+          @include sm {
+            flex-direction: column;
+          }
+
+          & .bottom-card {
+            border-radius: em(20);
+            padding: em(20);
+            box-shadow: 1px 7px 12px 0px rgba(0,0,0,0.19);
+            -webkit-box-shadow: 1px 7px 12px 0px rgba(0,0,0,0.19);
+            -moz-box-shadow: 1px 7px 12px 0px rgba(0,0,0,0.19);
+
+            &-left {
+              width: 35vw;
+              padding: 0;
+              overflow: hidden;
+              position: relative;
+              @include sm{
+                width: 100%;
+              }
+              & > .carouselWrapper {
+                  & .theatreCard {
+                      display: flex;
+                      flex-direction: column;
+                      // margin-right: em(20);
+                      & > .imgWrapper {
+                          & > img {
+                              width: 100%;
+                              min-height: 51vh;
+                              object-fit: cover;
+                          }
+                      }
+                      & > .descWrapper {
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          flex-direction: column;
+                          gap: em(9);
+                          @include sm {
+                              width: 100%;
+                          }
+                      }
+                  }
+              }
+              
+            } 
+            &-center {
+              height: 100%;
+              width: calc((55vh - em(40))/2);
+              display: flex;
+              flex-direction: column;
+              gap: em(20);
+
+              @include sm{
+                width: 100%;
+              }
+
+              & .skills-card {
+                width: 100%;
+                height: 50%;
+              }
+
+            } 
+            &-right { 
+              flex: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
