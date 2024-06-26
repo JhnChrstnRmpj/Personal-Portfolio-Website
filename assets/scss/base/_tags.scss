@@ -1,20 +1,39 @@
-.tag {
+.active-tags {
   width: fit-content;
-  // padding: em(4) em(12);
-  // background-color: $black;
-  // border: em(1) solid $black;
-  // border-radius: em(10);
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   display: flex;
   gap: em(10);
 
-  & span {
-    letter-spacing: em(2);
-    // text-transform: uppercase;
-    font-size: em(14);
-    font-weight: 500;
-    // color: $white;
+  & .circle{
+    width: em(12);
+    height: em(12);
+    border-radius: 100%;
+    background: rgba(98, 189, 25, 0.65);
+    box-shadow: 0 0 0 rgba(98, 189, 25, 0.65);
+    animation: pulsing 1.5s infinite;
+    transition: all 0.2s;
+  }  
+}
+
+@keyframes pulsing {
+  from {
+    box-shadow: 0 0 0 0 rgba(98, 189, 25, 0.65);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(98, 189, 25, 0);
+  }
+  to {
+    box-shadow: 0 0 0 0 rgba(98, 189, 25, 0);
   }
 }
+
+.tags {
+  background-color: #EAE1D6;
+  border-radius: em(20);
+  padding: em(30);
+  box-shadow: 1px 7px 12px 0px rgba(0,0,0,0.19);
+  -webkit-box-shadow: 1px 7px 12px 0px rgba(0,0,0,0.19);
+  -moz-box-shadow: 1px 7px 12px 0px rgba(0,0,0,0.19);
+} 

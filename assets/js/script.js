@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
   carousels.forEach((element, i) => {
     const flickityName = `flickity${i}`;
     window[flickityName] = new Flickity(element, {
-      autoPlay: false,
+      autoPlay: true,
       pauseAutoPlayOnHover: true,
       pageDots: false,
       draggable: true,

@@ -18,6 +18,9 @@
         border-radius: 100%;
         border: 1px solid #EAE1D6;
         background-color: #EAE1D6;
+        // box-shadow: 1px 7px 12px 0px rgba(0,0,0,0.19);
+        //     -webkit-box-shadow: 1px 7px 12px 0px rgba(0,0,0,0.19);
+        //     -moz-box-shadow: 1px 7px 12px 0px rgba(0,0,0,0.19);
         &::after {
             background: url("/assets/images/icons/arrow-left-black.svg") center center/50% no-repeat;
             content: "";
@@ -26,6 +29,7 @@
             height: em(25);
         }
         &.btnPrevCarousel {
+            box-shadow: 1px 7px 12px 0px rgba(0,0,0,0.19);
             &::after {
                 left: 20%;
                 top: 25%;
@@ -33,6 +37,8 @@
         }
         &.btnNextCarousel {
             transform: rotate(180deg);
+            transform-origin: center center;
+            box-shadow: -1px -7px 12px 0px rgba(0,0,0,0.19);
             &::after {
                 left: 20%;
                 top: 25%;

@@ -53,6 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const carousels = document.querySelectorAll(".text-carousel");
 
   carousels.forEach((rollerEl, i) => {
-    roller(rollerEl, 1);
+    roller(rollerEl, .75);
   });
 });
