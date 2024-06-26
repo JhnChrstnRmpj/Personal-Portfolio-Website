@@ -45,12 +45,17 @@
   width: 1.5625em;
   height: 1.5625em;
 }
+.carouselNav > button.btnPrevCarousel {
+  box-shadow: 1px 7px 12px 0px rgba(0, 0, 0, 0.19);
+}
 .carouselNav > button.btnPrevCarousel::after {
   left: 20%;
   top: 25%;
 }
 .carouselNav > button.btnNextCarousel {
   transform: rotate(180deg);
+  transform-origin: center center;
+  box-shadow: -1px -7px 12px 0px rgba(0, 0, 0, 0.19);
 }
 .carouselNav > button.btnNextCarousel::after {
   left: 20%;
@@ -143,15 +148,41 @@ span {
 }
 
 .card {
-  border-radius: 1.25em;
-  padding: 1.875em;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px; /* Adjusted from em(20) to px value */
+  padding: 30px; /* Adjusted from em(30) to px value */
   box-shadow: 1px 7px 12px 0px rgba(0, 0, 0, 0.19);
   -webkit-box-shadow: 1px 7px 12px 0px rgba(0, 0, 0, 0.19);
   -moz-box-shadow: 1px 7px 12px 0px rgba(0, 0, 0, 0.19);
-  background-color: #EAE1D6;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  transform: translatez(0); /* Not necessary unless for specific reasons */
 }
 
-.tag {
+.card:hover {
+  transform: scale(1.02); /* Example hover effect, adjust as needed */
+}
+
+.ink {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  background-color: transparent;
+  pointer-events: none;
+  transition: transform 0.6s, opacity 0.4s;
+}
+
+.ink.animate {
+  animation: ripple-animation 0.6s;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+.active-tags {
   width: fit-content;
   flex-direction: row;
   align-items: center;
@@ -159,75 +190,34 @@ span {
   display: flex;
   gap: 0.625em;
 }
-.tag span {
-  letter-spacing: 0.125em;
-  font-size: 0.875em;
-  font-weight: 500;
+.active-tags .circle {
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 100%;
+  background: rgba(98, 189, 25, 0.65);
+  box-shadow: 0 0 0 rgba(98, 189, 25, 0.65);
+  animation: pulsing 1.5s infinite;
+  transition: all 0.2s;
 }
 
-.grain {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  pointer-events: none;
-  z-index: -1;
-  transform: translateZ(0);
-}
-.grain:before {
-  content: "";
-  top: -10rem;
-  left: -10rem;
-  width: calc(100% + 20rem);
-  height: calc(100% + 20rem);
-  z-index: 9999;
-  position: fixed;
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
-  opacity: 0.15;
-  pointer-events: none;
-  -webkit-animation: noise 1s steps(2) infinite;
-  animation: noise 1s steps(2) infinite;
-}
-@-webkit-keyframes noise {
-  to {
-    transform: translate3d(-7rem, 0, 0);
-  }
-}
-@keyframes noise {
-  0% {
-    transform: translate3d(0, 9rem, 0);
-  }
-  10% {
-    transform: translate3d(-1rem, -4rem, 0);
-  }
-  20% {
-    transform: translate3d(-8rem, 2rem, 0);
-  }
-  30% {
-    transform: translate3d(9rem, -9rem, 0);
-  }
-  40% {
-    transform: translate3d(-2rem, 7rem, 0);
-  }
-  50% {
-    transform: translate3d(-9rem, -4rem, 0);
-  }
-  60% {
-    transform: translate3d(2rem, 6rem, 0);
+@keyframes pulsing {
+  from {
+    box-shadow: 0 0 0 0 rgba(98, 189, 25, 0.65);
   }
   70% {
-    transform: translate3d(7rem, -8rem, 0);
-  }
-  80% {
-    transform: translate3d(-9rem, 1rem, 0);
-  }
-  90% {
-    transform: translate3d(6rem, -5rem, 0);
+    box-shadow: 0 0 0 10px rgba(98, 189, 25, 0);
   }
   to {
-    transform: translate3d(-7rem, 0, 0);
+    box-shadow: 0 0 0 0 rgba(98, 189, 25, 0);
   }
+}
+.tags {
+  background-color: #EAE1D6;
+  border-radius: 1.25em;
+  padding: 1.875em;
+  box-shadow: 1px 7px 12px 0px rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 1px 7px 12px 0px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 1px 7px 12px 0px rgba(0, 0, 0, 0.19);
 }
 
 header {
@@ -374,19 +364,24 @@ section.bentoGrid .container .wrapper .card-4 .smallCard-4 {
   grid-area: 3/3/5/5;
 }
 
+section {
+  height: 100vh;
+  overflow: hidden;
+}
 section.theatreSlider {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background-color: #EEEEEE;
 }
 section.theatreSlider > .container {
   width: 100%;
+  height: 100%;
   display: flex;
 }
 section.theatreSlider > .container > .wrapper {
+  height: 100%;
   width: 100%;
   display: flex;
   position: relative;
@@ -400,13 +395,13 @@ section.theatreSlider > .container > .wrapper {
 }
 section.theatreSlider > .container > .wrapper > .carouselContainer {
   width: 100%;
+  height: 100%;
   margin-bottom: 2.5em;
 }
 section.theatreSlider > .container > .wrapper > .carouselContainer > .carouselWrapper .theatreCard {
   display: flex;
   flex-direction: column;
-  margin-right: 1.25em;
-  padding-left: 1.25em;
+  margin: 0 1.25em;
   margin-bottom: 2.5em;
 }
 section.theatreSlider > .container > .wrapper > .carouselContainer > .carouselWrapper .theatreCard > .imgWrapper {
@@ -445,7 +440,8 @@ section.theatreSlider > .container > .wrapper .bottomColumn {
   padding: 1.25em;
 }
 section.theatreSlider > .container > .wrapper .bottomColumn h1 {
-  font-size: 6.25em;
+  font-weight: 700;
+  font-size: 9.375em;
 }
 
 section.bento {
@@ -472,7 +468,7 @@ section.bento .container .wrapper .block {
   border-radius: 1.25em;
 }
 section.bento .container .wrapper .block.top-block {
-  height: calc(45vh - 2.5em);
+  height: calc(50vh - 2.5em);
   display: flex;
   gap: 1.25em;
 }
@@ -482,52 +478,121 @@ section.bento .container .wrapper .block.top-block {
   }
 }
 section.bento .container .wrapper .block.top-block .top-card-left {
-  position: relative;
-  width: 60vw;
   display: flex;
+  gap: 1.25em;
   flex-direction: column;
-  justify-content: space-between;
+  width: 60vw;
 }
 @media (max-width: 400px) {
   section.bento .container .wrapper .block.top-block .top-card-left {
     width: 100%;
   }
 }
-section.bento .container .wrapper .block.top-block .top-card-left .top-content {
+section.bento .container .wrapper .block.top-block .top-card-left .content-block {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+section.bento .container .wrapper .block.top-block .top-card-left .content-block .top-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+section.bento .container .wrapper .block.top-block .top-card-left .content-block .top-content .right-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25em;
+}
+section.bento .container .wrapper .block.top-block .top-card-left .content-block .top-content .right-nav a {
+  color: black;
+}
+section.bento .container .wrapper .block.top-block .top-card-left .content-block .center-content {
   display: flex;
   gap: 1.25em;
 }
-section.bento .container .wrapper .block.top-block .top-card-left h2 {
+section.bento .container .wrapper .block.top-block .top-card-left .content-block .center-content .img-wrapper {
+  width: 6.25em;
+  height: 6.25em;
+}
+section.bento .container .wrapper .block.top-block .top-card-left .content-block .center-content .img-wrapper img {
+  filter: invert(0.9);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+section.bento .container .wrapper .block.top-block .top-card-left .content-block h2 {
   font-weight: 900;
   letter-spacing: -0.09375em;
 }
-section.bento .container .wrapper .block.top-block .top-card-left h5 {
+section.bento .container .wrapper .block.top-block .top-card-left .content-block h5 {
   opacity: 0.8;
   letter-spacing: -0.025em;
 }
-section.bento .container .wrapper .block.top-block .top-card-left h5 span {
+section.bento .container .wrapper .block.top-block .top-card-left .content-block h5 span {
   font-weight: 600;
 }
-section.bento .container .wrapper .block.top-block .top-card-left h6 {
+section.bento .container .wrapper .block.top-block .top-card-left .content-block h6 {
   letter-spacing: -0.05em;
 }
-section.bento .container .wrapper .block.top-block .top-card-left .circle {
-  width: 0.625em;
-  height: 0.625em;
-  border-radius: 100%;
-  background-color: green;
-}
-section.bento .container .wrapper .block.top-block .top-card-left .bottom-content {
+section.bento .container .wrapper .block.top-block .top-card-left .content-block .bottom-content {
   display: flex;
-  margin-bottom: 1.25em;
 }
 section.bento .container .wrapper .block.top-block .top-card-right {
   width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 @media (max-width: 400px) {
   section.bento .container .wrapper .block.top-block .top-card-right {
     width: 100%;
   }
+}
+section.bento .container .wrapper .block.top-block .top-card-right .social-wrapper {
+  width: 100%;
+  max-width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+section.bento .container .wrapper .block.top-block .top-card-right .social-wrapper .social-title {
+  margin-bottom: 1.25em;
+}
+section.bento .container .wrapper .block.top-block .top-card-right .social-wrapper .icon-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+section.bento .container .wrapper .block.top-block .top-card-right .social-wrapper .icon-wrapper .social-icon {
+  width: 3.125em;
+  height: 3.125em;
+}
+section.bento .container .wrapper .block.top-block .top-card-right .social-wrapper .icon-wrapper .social-icon img {
+  width: 100%;
+}
+section.bento .container .wrapper .block.top-block .top-card-right .input-wrapper {
+  width: 100%;
+  height: 3.125em;
+  display: flex;
+  flex-direction: row;
+  border-radius: 0.625em;
+  border: 0.0625em solid #0A0A0A;
+}
+section.bento .container .wrapper .block.top-block .top-card-right .input-wrapper input {
+  all: unset;
+  width: 80%;
+  height: 100%;
+  padding-left: 1.25em;
+}
+section.bento .container .wrapper .block.top-block .top-card-right .input-wrapper button {
+  width: 20%;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.625em;
+  border-left: 0.0625em solid #0A0A0A;
+  background-color: #c5c5c5;
 }
 section.bento .container .wrapper .block.middle-block {
   position: relative;
@@ -560,7 +625,7 @@ section.bento .container .wrapper .block.middle-block .carouselWrapper .carousel
 }
 section.bento .container .wrapper .block.bottom-block {
   width: 100%;
-  height: calc(55vh - 2.5em);
+  height: calc(50vh - 2.5em);
   display: flex;
   flex-direction: row;
   gap: 1.25em;
@@ -578,7 +643,7 @@ section.bento .container .wrapper .block.bottom-block .bottom-card {
   -moz-box-shadow: 1px 7px 12px 0px rgba(0, 0, 0, 0.19);
 }
 section.bento .container .wrapper .block.bottom-block .bottom-card-left {
-  width: 35vw;
+  width: 38vw;
   padding: 0;
   overflow: hidden;
   position: relative;
@@ -588,16 +653,16 @@ section.bento .container .wrapper .block.bottom-block .bottom-card-left {
     width: 100%;
   }
 }
-section.bento .container .wrapper .block.bottom-block .bottom-card-left > .carouselWrapper .theatreCard {
+section.bento .container .wrapper .block.bottom-block .bottom-card-left > .carouselWrapper .featuredCard {
   display: flex;
   flex-direction: column;
 }
-section.bento .container .wrapper .block.bottom-block .bottom-card-left > .carouselWrapper .theatreCard > .imgWrapper > img {
+section.bento .container .wrapper .block.bottom-block .bottom-card-left > .carouselWrapper .featuredCard > .imgWrapper > img {
   width: 100%;
   min-height: 51vh;
   object-fit: cover;
 }
-section.bento .container .wrapper .block.bottom-block .bottom-card-left > .carouselWrapper .theatreCard > .descWrapper {
+section.bento .container .wrapper .block.bottom-block .bottom-card-left > .carouselWrapper .featuredCard > .descWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -605,13 +670,13 @@ section.bento .container .wrapper .block.bottom-block .bottom-card-left > .carou
   gap: 0.5625em;
 }
 @media (max-width: 400px) {
-  section.bento .container .wrapper .block.bottom-block .bottom-card-left > .carouselWrapper .theatreCard > .descWrapper {
+  section.bento .container .wrapper .block.bottom-block .bottom-card-left > .carouselWrapper .featuredCard > .descWrapper {
     width: 100%;
   }
 }
 section.bento .container .wrapper .block.bottom-block .bottom-card-center {
   height: 100%;
-  width: calc((55vh - 2.5em) / 2);
+  width: calc(40vh - 2.5em);
   display: flex;
   flex-direction: column;
   gap: 1.25em;
@@ -622,11 +687,37 @@ section.bento .container .wrapper .block.bottom-block .bottom-card-center {
   }
 }
 section.bento .container .wrapper .block.bottom-block .bottom-card-center .skills-card {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 50%;
+  height: 100%;
+}
+section.bento .container .wrapper .block.bottom-block .bottom-card-center .skills-card .skills-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625em;
 }
 section.bento .container .wrapper .block.bottom-block .bottom-card-right {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
   flex: 1;
+}
+section.bento .container .wrapper .block.bottom-block .bottom-card-right h3 {
+  position: fixed;
+  font-weight: 600;
+}
+section.bento .container .wrapper .block.bottom-block .bottom-card-right .graphWrapper {
+  width: 100%;
+  height: 100%;
+  padding: 1.25em;
+  border-radius: 1.25em;
+}
+section.bento .container .wrapper .block.bottom-block .bottom-card-right .graphWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 * {
@@ -651,6 +742,7 @@ section.bento .container .wrapper .block.bottom-block .bottom-card-right {
 }
 
 body {
+  background-color: #EAE1D6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
