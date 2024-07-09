@@ -1,14 +1,14 @@
 section.bento {
-  position: relative;
-  height: 100vh;
+  position: relative; 
   width: 100%;
   overflow: hidden;
   z-index: 1;
+  max-width: em(1920);
 
   & .container {
     width: 100%;
     height: 100%;
-    padding: em(20);
+    padding: 0 em(40);
 
     & .wrapper {
       width: 100%;
@@ -16,149 +16,134 @@ section.bento {
       display: flex;
       flex-direction: column;
       gap: em(20);
+      margin-bottom: em(10);
 
-      & .block {
+      & .block { 
         width: 100%;
         border-radius: em(20);
 
         &.top-block {
-          height: calc(50vh - em(40));
           display: flex;
           gap: em(20);
           @include sm {
             flex-direction: column;
           }
 
-          & .top-card {
-
-            &-left {
-              display: flex;
-              gap: em(20);
-              flex-direction: column;
-              width: 60vw;
-              
-              @include sm{
-                width: 100%;
-              }
-
-              & .content-block {
-                position: relative;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-
-                & .top-content {
-                  width: 100%;
-                  display: flex;
-                  justify-content: space-between;
-
-                  & .right-nav {
-                    display: flex;
-                    flex-direction: row;
-                    gap: em(20);
-                    a {
-                      color: black;
-                    }
-                  }
-                }
-
-                & .center-content {
-                  display: flex;
-                  gap: em(20);
-                  
-                  & .img-wrapper {
-                    width: em(100);
-                    height: em(100);
-                    & img {
-                      filter: invert(0.9);
-                      width: 100%;
-                      height: 100%;
-                      object-fit: contain;
-                    }
-                  }
-                }
-                h2{
-                  font-weight: 900;
-                  letter-spacing:em(-1.5);
-                }
-                h5{
-                  opacity: 0.8;
-                  letter-spacing:em(-0.4);
-                  & span{
-                    font-weight: 600;
-                  }
-                }
-                h6{
-                  letter-spacing:em(-0.8);
-                }
-                & .bottom-content {
-                  display: flex;
-                }
-              } 
+          & .card-left {
+            width: 60vw;
+            display: flex;
+            gap: em(20);
+            flex-direction: row;
+            
+            @include sm{
+              width: 100%;
             }
 
-            &-right { 
-              width: 40vw;
+            & .content-block {
+              width: 50%;
+              position: relative;
               display: flex;
               flex-direction: column;
-              justify-content: space-around;
-              @include sm{
-                width: 100%;
+              justify-content: center;
+
+              h2{
+                font-weight: 900;
+                letter-spacing:em(-1.5);
               }
-
-              & .social-wrapper {
-                width: 100%;
-                max-width: fit-content;
-                display: flex;
-                flex-direction: column;
-
-                & .social-title {
-                  margin-bottom: em(20);
+              h5{
+                opacity: 0.8;
+                letter-spacing:em(-0.4);
+                margin-bottom: em(20);
+                & span{
+                  font-weight: 600;
                 }
-
-                & .icon-wrapper {
-                  width: 100%;
-                  display: flex;
-                  justify-content: space-between;
-                  
-                  & .social-icon {
-                    width: em(50);
-                    height: em(50);
-  
-                    & img{
-                      width: 100%;
-                    }
-                  } 
-                }
-
               }
-
-              & .input-wrapper {
-                width: 100%;
-                height: em(50);
+              h6{
+                letter-spacing:em(-0.8);
+              }
+              & .bottom-content {
                 display: flex;
-                // background-color: red;
-                flex-direction: row;
-                border-radius: em(10);
-                border: em(1) solid $black;
+              }
+            } 
 
-                & input {
-                  all: unset;
-                  width: 80%;
-                  height: 100%;
-                  padding-left: em(20);
-                }
-                & button {
-                  width: 20%;
-                  height: 100%;
-                  border: none;
-                  cursor: pointer;
-                  border-radius: em(10);
-                  border-left: em(1) solid $black;
-                  background-color: #c5c5c5;
+            & .right-block {
+              width: 50%;
+              position: relative;
 
+              & img {
+                position: absolute;
+                top: em(-22);
+                width: 100%;
+                height: 116%;
+                object-fit: cover;
+              }
+              & .eye-container {
+                position: absolute; 
+
+                & .eye {
+                  position: relative;
+                  display: inline-block;;
+                  border-radius: 50%;
+                  height: em(50);
+                  width: em(50);
+                  background: #CCC;
+
+                  &.left-eye {
+                    top: em(320);
+                    right: em(-154);
+                  }
+                  &.right-eye {
+                    top: em(316);
+                    right: em(-236);
+                  }
+
+                  &::after {
+                    position: absolute;
+                    bottom: em(17);
+                    right: em(10);
+                    width: em(30);
+                    height: em(30);
+                    background: #331E21;
+                    border-radius: 50%;
+                    content: " ";
+                  }
                 }
+              }
+            }
+          }
+
+          & .card-right { 
+            width: 40vw;
+            display: flex;
+            flex-direction: column;
+            gap: em(20);
+
+            & .top-card {
+              width: 100%;
+              height: 20%;
+              display: flex;
+              flex-wrap: wrap;
+              gap: em(10);
+              // position: relative;
+              border-radius: em(30);
+              padding: em(20);
+              background-color: #EEEFF5;
+              box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+              
+            }
+
+            & .bottom-card {
+              overflow: hidden;
+              width: 100%;
+              height: 80%;
+              padding: 0;
+              border: none;
+              pointer-events: none;
+
+              & img {
+                width: 100%;  
+                height: 100%;
+                object-fit: cover;
               }
             }
           }
@@ -166,13 +151,10 @@ section.bento {
   
         &.middle-block {
           position: relative;
-          overflow: hidden;
+          // overflow: hidden;
           width: 100%;
-          height: 4vh;
-          padding: em(10);
-          @include md {
-            height: 5vh;
-          }
+          height: em(90);
+          margin-top: em(10);
           
           & .carouselWrapper {
             width: 100%;
@@ -183,117 +165,18 @@ section.bento {
               display: inline-block;
   
               & p {
+                color: $white;
+                text-transform: uppercase;
+                font-size: em(70);
+                font-weight: 700;
                 letter-spacing: em(2);
               }
   
               & .box-space {
-                width: em(10);
-                height: em(10);
-                background-color: #0A0A0A;
-                display: inline-block;
-              }
-            }
-          }
-        }
-  
-        &.bottom-block {
-          width: 100%;
-          height: calc(50vh - em(40));
-          display: flex;
-          flex-direction: row;
-          gap: em(20);
-          @include sm {
-            flex-direction: column;
-          }
-
-          & .bottom-card {
-            border-radius: em(20);
-            padding: em(20);
-            box-shadow: 1px 7px 12px 0px rgba(0,0,0,0.19);
-            -webkit-box-shadow: 1px 7px 12px 0px rgba(0,0,0,0.19);
-            -moz-box-shadow: 1px 7px 12px 0px rgba(0,0,0,0.19);
-
-            &-left {
-              width: 38vw;
-              padding: 0;
-              overflow: hidden;
-              position: relative;
-              @include sm{
-                width: 100%;
-              }
-              & > .carouselWrapper {
-                  & .featuredCard {
-                      display: flex;
-                      flex-direction: column;
-                      & > .imgWrapper {
-                          & > img {
-                              width: 100%;
-                              min-height: 51vh;
-                              object-fit: cover;
-                          }
-                      }
-                      & > .descWrapper {
-                          display: flex;
-                          justify-content: center;
-                          align-items: center;
-                          flex-direction: column;
-                          gap: em(9);
-                          @include sm {
-                              width: 100%;
-                          }
-                      }
-                  }
-              }
-              
-            } 
-            &-center {
-              height: 100%;
-              width: calc((40vh - em(40)));
-              display: flex;
-              flex-direction: column;
-              gap: em(20);
-
-              @include sm{
-                width: 100%;
-              }
-
-              & .skills-card {
+                height: em(80);
                 display: flex;
-                flex-direction: column;
-                width: 100%;
-                height: 100%;
-
-                & .skills-content {
-                  display: flex;
-                  flex-wrap: wrap;
-                  gap: em(10);
-                }
-              }
-
-            } 
-            &-right { 
-              display: flex;
-              flex-direction: column;
-              width: 100%;
-              height: 100%;
-              flex: 1;
-
-              h3 {
-                position: fixed;
-                font-weight: 600;
-              }
-
-              & .graphWrapper {
-                width: 100%;
-                height: 100%;
-                padding: em(20);
-                border-radius: em(20);
-
-                & img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: contain;
-                }
+                justify-content: center;
+                align-items: center;
               }
             }
           }
