@@ -150,16 +150,11 @@ span {
 .card {
   position: relative;
   overflow: hidden;
-  border-radius: 1.875em;
+  border-radius: 2.5em;
   padding: 1.25em;
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, transform 0.3s ease;
   transform: translateZ(0);
-  background-color: #EEEFF5;
-}
-
-.card:hover {
-  transform: scale(1.02);
+  background-color: #FCFCFC;
 }
 
 .ink {
@@ -238,13 +233,18 @@ span {
 
 header {
   width: 100%;
-  max-width: 120em;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
 }
 header .container {
   width: 100%;
   height: 100%;
-  padding: 1.25em 2.5em 0 2.5em;
+  max-width: 103.125em;
+  padding: 1.25em 2.5em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -252,13 +252,13 @@ header .container {
 header .container .wrapper {
   width: 100%;
   padding: 0.625em 1.875em;
-  border-radius: 1.875em;
+  border-radius: 2.5em;
   background-color: #EEEFF2;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.062745098);
 }
 header .container .wrapper nav {
-  height: 1.875em;
+  height: 3.125em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -277,117 +277,174 @@ header .container .wrapper nav .rightNav p {
   font-weight: 400;
 }
 
-section.bentoGrid {
+section.banner {
   position: relative;
-  padding-bottom: 1.25em;
-  padding: 0 1.25em;
-  height: 100vh;
+  width: 100%;
+  z-index: 1;
+  margin-top: 1.125em;
+  margin-bottom: 1.25em;
 }
-section.bentoGrid .container {
+section.banner .container {
   width: 100%;
   height: 100%;
+  padding: 0 2.5em;
+  display: flex;
+  justify-content: center;
 }
-section.bentoGrid .container .wrapper {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+section.banner .container .wrapper {
+  width: 100%;
+  max-width: 100em;
+  height: 100%;
+}
+section.banner .container .wrapper .block {
+  width: 100%;
+  border-radius: 1.25em;
+}
+section.banner .container .wrapper .block.top-block {
+  display: flex;
   gap: 1.25em;
 }
-section.bentoGrid .container .wrapper .card {
+@media (max-width: 900px) {
+  section.banner .container .wrapper .block.top-block {
+    flex-direction: column;
+  }
+}
+section.banner .container .wrapper .block.top-block .card-left {
   width: 100%;
-  height: 100%;
-  border: 0.125em solid #FFF;
-  background-color: #EAEAE9;
+  display: flex;
+  gap: 1.25em;
+  flex-direction: row;
+  height: 50em;
 }
-section.bentoGrid .container .wrapper .card-1 {
-  grid-area: 1/1/4/4;
+@media (max-width: 900px) {
+  section.banner .container .wrapper .block.top-block .card-left {
+    height: 37.5em;
+    width: 100%;
+  }
 }
-section.bentoGrid .container .wrapper .card-2 {
-  grid-area: 4/1/5/4;
-}
-section.bentoGrid .container .wrapper .card-3 {
-  grid-area: 1/4/2/7;
-}
-section.bentoGrid .container .wrapper .card-5 {
-  grid-area: 5/1/7/3;
-}
-section.bentoGrid .container .wrapper .card-6 {
-  grid-area: 5/3/7/5;
-}
-section.bentoGrid .container .wrapper .card-7 {
-  grid-area: 5/5/7/7;
-}
-section.bentoGrid .container .wrapper .card .about-card {
-  width: 100%;
-  height: 100%;
-  padding: 4.375em 3.125em;
+section.banner .container .wrapper .block.top-block .card-left .content-block {
+  width: 50%;
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
-section.bentoGrid .container .wrapper .card .about-card h1 {
+@media (max-width: 900px) {
+  section.banner .container .wrapper .block.top-block .card-left .content-block {
+    width: 40%;
+  }
+}
+section.banner .container .wrapper .block.top-block .card-left .content-block h1 {
+  font-weight: 900;
+  letter-spacing: -0.09375em;
+}
+@media (max-width: 900px) {
+  section.banner .container .wrapper .block.top-block .card-left .content-block h1 {
+    font-size: 3.75em;
+  }
+}
+section.banner .container .wrapper .block.top-block .card-left .content-block h5 {
+  opacity: 0.8;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.25em;
+}
+section.banner .container .wrapper .block.top-block .card-left .content-block h5 span {
   font-weight: 600;
-  margin-bottom: 50px;
 }
-section.bentoGrid .container .wrapper .card .tape {
-  width: 100%;
-  height: 100%;
-  padding: 2.5em 0;
-  overflow: hidden;
+section.banner .container .wrapper .block.top-block .card-left .content-block h6 {
+  letter-spacing: -0.05em;
+}
+section.banner .container .wrapper .block.top-block .card-left .content-block .bottom-content {
+  display: flex;
+}
+section.banner .container .wrapper .block.top-block .card-left .right-block {
+  width: 50%;
   position: relative;
 }
-section.bentoGrid .container .wrapper .card .tape::before, section.bentoGrid .container .wrapper .card .tape::after {
-  content: "";
+@media (max-width: 900px) {
+  section.banner .container .wrapper .block.top-block .card-left .right-block {
+    width: 60%;
+  }
+}
+section.banner .container .wrapper .block.top-block .card-left .right-block img {
   position: absolute;
-  top: 0;
-  width: 10%;
+  bottom: -1.25em;
+  width: 100%;
   height: 100%;
-  z-index: 1;
-  border-radius: 50px;
+  object-fit: cover;
 }
-section.bentoGrid .container .wrapper .card .tape::before {
-  left: 0;
-  background: linear-gradient(to right, #EAEAE9 0%, rgba(255, 255, 255, 0) 100%);
+.eye-container {
+  position: absolute;
+  width: 12.5em;
+  background-color: red;
+  top: 45%;
+  left: 34%;
 }
-section.bentoGrid .container .wrapper .card .tape::after {
-  right: 0;
-  background: linear-gradient(to left, #EAEAE9 0%, rgba(255, 255, 255, 0) 100%);
+@media (max-width: 900px) {
+  .eye-container {
+    display: none;
+  }
 }
-section.bentoGrid .container .wrapper .card .tape .carousel-text {
-  margin: 0 0.875em;
+.eye-container .eye-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.eye-container .eye-wrapper .eye {
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+  height: 3.75em;
+  width: 3.75em;
+  background: #CCC;
+}
+.eye-container .eye-wrapper .eye.left-eye {
+  top: 0.375em;
+  left: 1.25em;
+}
+.eye-container .eye-wrapper .eye.right-eye {
+  top: 0.25em;
+  right: -1.25em;
+}
+.eye-container .eye-wrapper .eye::after {
+  position: absolute;
+  bottom: 1.0625em;
+  right: 0.625em;
+  width: 2.125em;
+  height: 2.125em;
+  background: #331E21;
+  border-radius: 50%;
+  content: " ";
+}
+
+section.offers {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 5.625em;
+  margin-bottom: 1.25em;
+}
+section.offers .carouselWrapper {
+  width: 100%;
+}
+section.offers .carouselWrapper .carousel-text {
+  height: 100%;
+  margin: 0 1.25em;
   display: inline-block;
 }
-section.bentoGrid .container .wrapper .card .tape .carousel-text p {
+section.offers .carouselWrapper .carousel-text p {
+  color: #EEEEEE;
+  text-transform: uppercase;
+  font-size: 4.375em;
+  font-weight: 700;
   letter-spacing: 0.125em;
+  white-space: nowrap;
 }
-section.bentoGrid .container .wrapper .card .tape .carousel-text .box-space {
-  width: 0.625em;
-  height: 0.625em;
-  background-color: #0A0A0A;
-  display: inline-block;
-}
-section.bentoGrid .container .wrapper .card-4 {
-  grid-area: 2/4/5/7;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 1.25em;
-}
-section.bentoGrid .container .wrapper .card-4 .smallCard {
-  border: 0.125em solid #fff;
-  background-color: #EAEAE9;
-}
-section.bentoGrid .container .wrapper .card-4 .smallCard-1 {
-  grid-area: 1/1/3/3;
-}
-section.bentoGrid .container .wrapper .card-4 .smallCard-2 {
-  grid-area: 1/3/3/5;
-}
-section.bentoGrid .container .wrapper .card-4 .smallCard-3 {
-  grid-area: 3/1/5/3;
-}
-section.bentoGrid .container .wrapper .card-4 .smallCard-4 {
-  grid-area: 3/3/5/5;
+section.offers .carouselWrapper .carousel-text .box-space {
+  height: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 section.theatreSlider {
@@ -466,175 +523,7 @@ section.theatreSlider > .container > .wrapper .bottomColumn h1 {
   font-size: 9.375em;
 }
 
-section.bento {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  z-index: 1;
-  max-width: 120em;
-}
-section.bento .container {
-  width: 100%;
-  height: 100%;
-  padding: 0 2.5em;
-}
-section.bento .container .wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25em;
-  margin-bottom: 0.625em;
-}
-section.bento .container .wrapper .block {
-  width: 100%;
-  border-radius: 1.25em;
-}
-section.bento .container .wrapper .block.top-block {
-  display: flex;
-  gap: 1.25em;
-}
-@media (max-width: 400px) {
-  section.bento .container .wrapper .block.top-block {
-    flex-direction: column;
-  }
-}
-section.bento .container .wrapper .block.top-block .card-left {
-  width: 60vw;
-  display: flex;
-  gap: 1.25em;
-  flex-direction: row;
-}
-@media (max-width: 400px) {
-  section.bento .container .wrapper .block.top-block .card-left {
-    width: 100%;
-  }
-}
-section.bento .container .wrapper .block.top-block .card-left .content-block {
-  width: 50%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-section.bento .container .wrapper .block.top-block .card-left .content-block h2 {
-  font-weight: 900;
-  letter-spacing: -0.09375em;
-}
-section.bento .container .wrapper .block.top-block .card-left .content-block h5 {
-  opacity: 0.8;
-  letter-spacing: -0.025em;
-  margin-bottom: 1.25em;
-}
-section.bento .container .wrapper .block.top-block .card-left .content-block h5 span {
-  font-weight: 600;
-}
-section.bento .container .wrapper .block.top-block .card-left .content-block h6 {
-  letter-spacing: -0.05em;
-}
-section.bento .container .wrapper .block.top-block .card-left .content-block .bottom-content {
-  display: flex;
-}
-section.bento .container .wrapper .block.top-block .card-left .right-block {
-  width: 50%;
-  position: relative;
-}
-section.bento .container .wrapper .block.top-block .card-left .right-block img {
-  position: absolute;
-  top: -1.375em;
-  width: 100%;
-  height: 116%;
-  object-fit: cover;
-}
-section.bento .container .wrapper .block.top-block .card-left .right-block .eye-container {
-  position: absolute;
-}
-section.bento .container .wrapper .block.top-block .card-left .right-block .eye-container .eye {
-  position: relative;
-  display: inline-block;
-  border-radius: 50%;
-  height: 3.125em;
-  width: 3.125em;
-  background: #CCC;
-}
-section.bento .container .wrapper .block.top-block .card-left .right-block .eye-container .eye.left-eye {
-  top: 20em;
-  right: -9.625em;
-}
-section.bento .container .wrapper .block.top-block .card-left .right-block .eye-container .eye.right-eye {
-  top: 19.75em;
-  right: -14.75em;
-}
-section.bento .container .wrapper .block.top-block .card-left .right-block .eye-container .eye::after {
-  position: absolute;
-  bottom: 1.0625em;
-  right: 0.625em;
-  width: 1.875em;
-  height: 1.875em;
-  background: #331E21;
-  border-radius: 50%;
-  content: " ";
-}
-section.bento .container .wrapper .block.top-block .card-right {
-  width: 40vw;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25em;
-}
-section.bento .container .wrapper .block.top-block .card-right .top-card {
-  width: 100%;
-  height: 20%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.625em;
-  border-radius: 1.875em;
-  padding: 1.25em;
-  background-color: #EEEFF5;
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-section.bento .container .wrapper .block.top-block .card-right .bottom-card {
-  overflow: hidden;
-  width: 100%;
-  height: 80%;
-  padding: 0;
-  border: none;
-  pointer-events: none;
-}
-section.bento .container .wrapper .block.top-block .card-right .bottom-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-section.bento .container .wrapper .block.middle-block {
-  position: relative;
-  width: 100%;
-  height: 5.625em;
-  margin-top: 0.625em;
-}
-section.bento .container .wrapper .block.middle-block .carouselWrapper {
-  width: 100%;
-}
-section.bento .container .wrapper .block.middle-block .carouselWrapper .carousel-text {
-  height: 100%;
-  margin: 0 1.25em;
-  display: inline-block;
-}
-section.bento .container .wrapper .block.middle-block .carouselWrapper .carousel-text p {
-  color: #EEEEEE;
-  text-transform: uppercase;
-  font-size: 4.375em;
-  font-weight: 700;
-  letter-spacing: 0.125em;
-}
-section.bento .container .wrapper .block.middle-block .carouselWrapper .carousel-text .box-space {
-  height: 5em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 * {
-  cursor: none;
   font-family: "Space Mono", monospace;
   font-size: 16px;
   color: #0A0A0A;
@@ -661,6 +550,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+main {
+  width: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */

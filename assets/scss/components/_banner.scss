@@ -1,0 +1,155 @@
+section.banner {
+  position: relative; 
+  width: 100%;
+  z-index: 1;
+  // max-width: em(1920);
+  margin-top: em(18);
+  margin-bottom: em(20);
+
+  & .container {
+    width: 100%;
+    height: 100%;
+    padding: 0 em(40);
+    display: flex;
+    justify-content: center;
+
+    & .wrapper {
+      width: 100%;
+      max-width: em(1600);
+      height: 100%;
+
+      & .block { 
+        width: 100%;
+        border-radius: em(20);
+
+        &.top-block {
+          display: flex;
+          gap: em(20);
+          @include md {
+            flex-direction: column;
+          }
+
+          & .card-left {
+            width: 100%;
+            display: flex;
+            gap: em(20);
+            flex-direction: row;
+            height: em(800);
+            
+            @include md{
+              height: em(600);
+              width: 100%;
+            }
+
+            & .content-block {
+              width: 50%;
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              @include md {
+                width: 40%;
+              }
+
+              h1{
+                font-weight: 900;
+                letter-spacing:em(-1.5);
+
+                @include md {
+                  font-size: em(60);
+                }
+              }
+              h5{
+                opacity: 0.8;
+                letter-spacing:em(-0.4);
+                margin-bottom: em(20);
+                & span{
+                  font-weight: 600;
+                }
+              }
+              h6{
+                letter-spacing:em(-0.8);
+              }
+              & .bottom-content {
+                display: flex;
+              }
+            } 
+
+            & .right-block {
+              width: 50%;
+              position: relative;
+              @include md {
+                width: 60%;
+              }
+
+              & img {
+                position: absolute;
+                bottom: em(-20);
+                // top: em(-22);
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
+                @include md {
+                  // width: 110%;
+                  // height: 110%;
+                  // object-fit: cover;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//STYLE FOR AVATAR EYES
+.eye-container {
+  position: absolute; 
+  width: em(200);
+  // height: em(50);
+  background-color: red;
+  top: 45%; 
+  left: 34%;
+
+  @include md {
+    display: none;
+  }
+
+  & .eye-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    & .eye {
+      position: absolute;
+      display: inline-block;
+      border-radius: 50%;
+      height: em(60);
+      width: em(60);
+      background: #CCC;
+  
+      &.left-eye {
+        top: em(6);
+        left: em(20);
+      }
+      &.right-eye {
+        top: em(4);
+        right: em(-20);
+      }
+  
+      &::after {
+        position: absolute;
+        bottom: em(17);
+        right: em(10);
+        width: em(34);
+        height: em(34);
+        background: #331E21;
+        border-radius: 50%;
+        content: " ";
+
+      }
+    }
+  }
+}

@@ -1,8 +1,11 @@
 // Define the roller function
-function roller(slideshowEl, speed) {
+function roller(slideshowEl, speed, direction = 'right') {
   let tickerSpeed = speed;
   let flickity = null;
   let isPaused = false;
+  
+  // Adjust tickerSpeed based on direction
+  tickerSpeed = direction === 'left' ? -tickerSpeed : tickerSpeed;
 
   const update = () => {
     if (isPaused) return;
@@ -53,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const carousels = document.querySelectorAll(".text-carousel");
 
   carousels.forEach((rollerEl, i) => {
-    roller(rollerEl, .75);
+    const direction = rollerEl.getAttribute('data-direction') || 'right';
+    roller(rollerEl, 0.3, direction);
   });
 });

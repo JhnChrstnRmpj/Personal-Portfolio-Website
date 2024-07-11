@@ -1,18 +1,18 @@
 .card {
   position: relative;
   overflow: hidden;
-  border-radius: em(30);
+  border-radius: em(40);
   padding: em(20);
-  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
   transition: background-color 0.3s ease, transform 0.3s ease;
   transform: translateZ(0);
-  background-color: #EEEFF5;
+  background-color: #FCFCFC;
+  // box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   // max-height: em(600);
 }
 
-.card:hover {
-  transform: scale(1.02);
-}
+// .card:hover {
+//   transform: scale(1.02);
+// }
 
 .ink {
   position: absolute;
