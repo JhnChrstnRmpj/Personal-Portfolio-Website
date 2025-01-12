@@ -2,11 +2,13 @@ section.offers {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: em(90);
+  height: 100%;
   margin-bottom: em(20);
   
   & .carouselWrapper {
     width: 100%;
+    height: em(100);
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
 
     & .carousel-text {
       height: 100%;
@@ -14,7 +16,6 @@ section.offers {
       display: inline-block;
 
       & p {
-        color: $white;
         text-transform: uppercase;
         font-size: em(70);
         font-weight: 700;

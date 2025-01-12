@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/styles/styles.css">
   <title>Projects</title>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
@@ -15,23 +16,91 @@
 
     <section class="projects" id="projects">
       <div class="container">
-        <div class="wrapper"></div>
+        <div class="wrapper">
+
+          <div class="project-block">
+            <div class="project-headline">
+              <h6>FEATURED PROJECTS</h6>
+              <h2>THESE ARE SOME OF MY WORKS!</h2>
+            </div>
+
+            <div class="project-card">
+              <div class="card-description">
+                <h4>CODEUX CREATIVE</h4>
+              </div>
+              <div class="card-image">
+                <img src="/assets/images/CODEUX CREATIVES.png" alt="">
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="card-description">
+                <h4>CODEUX CREATIVE</h4>
+              </div>
+              <div class="card-image">
+                <img src="/assets/images/CODEUX CREATIVES.png" alt="">
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="card-description">
+                <h4>CODEUX CREATIVE</h4>
+              </div>
+              <div class="card-image">
+                <img src="/assets/images/CODEUX CREATIVES.png" alt="">
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="card-description">
+                <h4>CODEUX CREATIVE</h4>
+              </div>
+              <div class="card-image">
+                <img src="/assets/images/CODEUX CREATIVES.png" alt="">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
       </div>
     </section>
 
   </main>
 
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script src="/assets/js/roller.js"></script>
+  <script src="/assets/js/script.js"></script>
+  <script src="/assets/js/background-animation.js"></script>
+  <script src="/assets/js/cursor.js"></script>
+  <script src="/assets/js/moving-eye.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.utils.toArray('.project-card').forEach(card => {
+        gsap.fromTo(card,
+          {
+            scale: 0.5,
+            opacity: 0
+          },
+          {
+            scale: 1,
+            opacity: 1,
+            scrollTrigger: {
+              trigger: card,
+              start: "top 80%",
+              end: "top 30%",
+              scrub: true,
+              markers: true
+            }
+          }
+        );
+      });
+    });
+  </script>
+
 </body>
-
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
-<script src="/assets/js/roller.js"></script>
-<script src="/assets/js/script.js"></script>
-<script src="/assets/js/background-animation.js"></script>
-<script src="/assets/js/cursor.js"></script>
-<script src="/assets/js/moving-eye.js"></script>
 
 </html>

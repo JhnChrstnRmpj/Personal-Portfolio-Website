@@ -167,7 +167,7 @@ span {
 }
 
 .ink.animate {
-  animation: ripple-animation 0.6s;
+  animation: ripple-animation 0.8s;
 }
 
 @keyframes ripple-animation {
@@ -256,6 +256,7 @@ header .container .wrapper {
   background-color: #EEEFF2;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.062745098);
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
 }
 header .container .wrapper nav {
   height: 3.125em;
@@ -287,6 +288,7 @@ section.banner {
 section.banner .container {
   width: 100%;
   height: 100%;
+  min-height: 56.25em;
   padding: 0 2.5em;
   display: flex;
   justify-content: center;
@@ -314,7 +316,8 @@ section.banner .container .wrapper .block.top-block .card-left {
   display: flex;
   gap: 1.25em;
   flex-direction: row;
-  height: 50em;
+  height: 53.125em;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
 }
 @media (max-width: 900px) {
   section.banner .container .wrapper .block.top-block .card-left {
@@ -396,7 +399,8 @@ section.banner .container .wrapper .block.top-block .card-left .right-block img 
   border-radius: 50%;
   height: 3.75em;
   width: 3.75em;
-  background: #CCC;
+  background: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.2) 0px 18px 36px -18px inset;
 }
 .eye-container .eye-wrapper .eye.left-eye {
   top: 0.375em;
@@ -421,11 +425,13 @@ section.offers {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 5.625em;
+  height: 100%;
   margin-bottom: 1.25em;
 }
 section.offers .carouselWrapper {
   width: 100%;
+  height: 6.25em;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
 }
 section.offers .carouselWrapper .carousel-text {
   height: 100%;
@@ -433,7 +439,6 @@ section.offers .carouselWrapper .carousel-text {
   display: inline-block;
 }
 section.offers .carouselWrapper .carousel-text p {
-  color: #EEEEEE;
   text-transform: uppercase;
   font-size: 4.375em;
   font-weight: 700;
@@ -445,6 +450,80 @@ section.offers .carouselWrapper .carousel-text .box-space {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+section.projects {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-top: 1.25em;
+  padding: 2.5em;
+}
+section.projects .container {
+  width: 100%;
+  height: 100%;
+}
+section.projects .container .wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.projects .container .wrapper .project-block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+section.projects .container .wrapper .project-block .project-headline {
+  width: 100%;
+  max-width: 37.5em;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  margin-bottom: 2.5em;
+}
+section.projects .container .wrapper .project-block .project-headline h6 {
+  margin-bottom: 0.625em;
+}
+section.projects .container .wrapper .project-block .card-block {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+section.projects .container .wrapper .project-block .card-block .project-card {
+  border: 0.0625em solid #EEEEEE;
+  border-radius: 1.875em;
+  width: 100%;
+  height: 100%;
+  max-height: 43.75em;
+  max-width: 100em;
+  display: flex;
+  flex-direction: row;
+  padding: 0.625em;
+  background-color: #FCFCFC;
+  margin-bottom: 6.25em;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+}
+section.projects .container .wrapper .project-block .card-block .project-card .card-description {
+  width: 30%;
+  padding: 2.5em;
+}
+section.projects .container .wrapper .project-block .card-block .project-card .card-image {
+  width: 70%;
+  border-radius: 1.875em;
+}
+section.projects .container .wrapper .project-block .card-block .project-card .card-image img {
+  border-radius: 1.25em;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 section.theatreSlider {
@@ -545,7 +624,6 @@ section.theatreSlider > .container > .wrapper .bottomColumn h1 {
 }
 
 body {
-  background-color: #0A0A0A;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
