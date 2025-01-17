@@ -368,12 +368,12 @@ header .container .wrapper .web-nav .mobile-right-nav img {
 header .container .wrapper .mobile-nav-container {
   opacity: 0;
   z-index: -1;
-  transition: all 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  transition: all 0.1s cubic-bezier(0.17, 0.67, 0.83, 0.67);
   pointer-events: none;
 }
 header .container .wrapper .mobile-nav-container.active {
   opacity: 1;
-  transition: all 0.2s ease-in;
+  transition: all 0.1s ease-in;
   display: flex;
   position: absolute;
   z-index: -1;
@@ -388,7 +388,7 @@ header .container .wrapper .mobile-nav-container .mobile-nav-wrapper {
   position: absolute;
   max-width: 22.1875em;
   width: 100%;
-  transition: all 0.3s ease-in;
+  transition: all 0.1s ease-in;
   z-index: 1;
   left: 0.625em;
 }
@@ -402,7 +402,7 @@ header .container .wrapper .mobile-nav-container .mobile-nav-wrapper.navActive {
   border-radius: 1.875em;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
   z-index: 1;
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
 }
 header .container .wrapper .mobile-nav-container .mobile-nav-wrapper .mobile-nav-menu {
   width: 100%;
