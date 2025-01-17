@@ -207,8 +207,8 @@ document.addEventListener("DOMContentLoaded", () => {
 const box = document.querySelector(".boxFt");
 const footerContent = document.querySelector("footer");
 
-footerContent.addEventListener("mouseenter", startAnimation);
-footerContent.addEventListener("mouseleave", stopAnimation);
+// footerContent.addEventListener("mouseenter", startAnimation);
+// footerContent.addEventListener("mouseleave", stopAnimation);
 
 function stopAnimation() {
   box.style.animation = "none";

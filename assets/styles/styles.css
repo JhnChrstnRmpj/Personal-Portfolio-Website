@@ -184,6 +184,11 @@ span {
   display: flex;
   gap: 0.625em;
 }
+@media (max-width: 400px) {
+  .active-tags {
+    display: none;
+  }
+}
 .active-tags .circle {
   width: 0.75em;
   height: 0.75em;
@@ -218,17 +223,53 @@ span {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
 }
 
-.custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  display: none;
+.eye-container {
+  position: absolute;
+  width: 12.5em;
+  top: 45%;
+  left: 34%;
 }
-.custom-cursor img {
-  width: 2.875em;
-  height: 2.875em;
+@media (max-width: 900px) {
+  .eye-container {
+    display: none;
+  }
+}
+.eye-container .eye-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.eye-container .eye-wrapper .eye {
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+  height: 3.75em;
+  width: 3.75em;
+  background: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.2) 0px 18px 36px -18px inset;
+}
+@media (max-width: 400px) {
+  .eye-container .eye-wrapper .eye {
+    display: none;
+  }
+}
+.eye-container .eye-wrapper .eye.left-eye {
+  top: 0.375em;
+  left: 1.25em;
+}
+.eye-container .eye-wrapper .eye.right-eye {
+  top: 0.25em;
+  right: -1.25em;
+}
+.eye-container .eye-wrapper .eye::after {
+  position: absolute;
+  bottom: 1.0625em;
+  right: 0.625em;
+  width: 2.125em;
+  height: 2.125em;
+  background: #331E21;
+  border-radius: 50%;
+  content: " ";
 }
 
 header {
@@ -249,6 +290,11 @@ header .container {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 400px) {
+  header .container {
+    padding: 0.625em;
+  }
+}
 header .container .wrapper {
   width: 100%;
   padding: 0.625em 1.875em;
@@ -258,32 +304,126 @@ header .container .wrapper {
   border: 1px solid rgba(0, 0, 0, 0.062745098);
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
 }
-header .container .wrapper nav {
+@media (max-width: 400px) {
+  header .container .wrapper {
+    padding: 0.25em 0.5em;
+  }
+}
+header .container .wrapper .web-nav {
   height: 3.125em;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-header .container .wrapper nav .leftNav img {
-  width: 1.875em;
-  height: 1.875em;
-  object-fit: contain;
+@media (max-width: 400px) {
+  header .container .wrapper .web-nav {
+    height: 1.875em;
+  }
+}
+header .container .wrapper .web-nav .leftNav {
+  display: flex;
+  justify-content: center;
+}
+header .container .wrapper .web-nav .leftNav img {
+  width: 2.5em;
+  height: 2.5em;
+  object-fit: cover;
   filter: invert(1);
 }
-header .container .wrapper nav .rightNav {
+@media (max-width: 400px) {
+  header .container .wrapper .web-nav .leftNav img {
+    object-fit: cover;
+    width: 1.25em;
+    height: 1.25em;
+    margin-left: 0.625em;
+  }
+}
+header .container .wrapper .web-nav .rightNav {
   display: flex;
   gap: 1.875em;
 }
-header .container .wrapper nav .rightNav p {
+@media (max-width: 400px) {
+  header .container .wrapper .web-nav .rightNav {
+    display: none;
+  }
+}
+header .container .wrapper .web-nav .rightNav p {
   font-weight: 400;
+}
+header .container .wrapper .web-nav .mobile-right-nav {
+  display: none;
+}
+@media (max-width: 400px) {
+  header .container .wrapper .web-nav .mobile-right-nav {
+    display: flex;
+    justify-content: center;
+    margin-right: 0.625em;
+  }
+}
+header .container .wrapper .web-nav .mobile-right-nav img {
+  width: 1.25em;
+  height: 1.25em;
+  object-fit: cover;
+}
+header .container .wrapper .mobile-nav-container {
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  pointer-events: none;
+}
+header .container .wrapper .mobile-nav-container.active {
+  opacity: 1;
+  transition: all 0.2s ease-in;
+  display: flex;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #FFF;
+  pointer-events: all;
+}
+header .container .wrapper .mobile-nav-container .mobile-nav-wrapper {
+  position: absolute;
+  max-width: 22.1875em;
+  width: 100%;
+  transition: all 0.3s ease-in;
+  z-index: 1;
+  left: 0.625em;
+}
+header .container .wrapper .mobile-nav-container .mobile-nav-wrapper.navActive {
+  position: absolute;
+  height: 0;
+  top: 1.875em;
+  left: 0.625em;
+  background-color: #FCFCFC;
+  border: 0.0625em solid #EEEEEE;
+  border-radius: 1.875em;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+header .container .wrapper .mobile-nav-container .mobile-nav-wrapper .mobile-nav-menu {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 section.banner {
   position: relative;
   width: 100%;
   z-index: 1;
-  margin-top: 1.125em;
+  top: 1.25em;
   margin-bottom: 1.25em;
+}
+@media (max-width: 900px) {
+  section.banner {
+    top: 7.5em;
+  }
 }
 section.banner .container {
   width: 100%;
@@ -292,6 +432,12 @@ section.banner .container {
   padding: 0 2.5em;
   display: flex;
   justify-content: center;
+}
+@media (max-width: 400px) {
+  section.banner .container {
+    flex-direction: column;
+    padding: 0 0.625em;
+  }
 }
 section.banner .container .wrapper {
   width: 100%;
@@ -305,11 +451,6 @@ section.banner .container .wrapper .block {
 section.banner .container .wrapper .block.top-block {
   display: flex;
   gap: 1.25em;
-}
-@media (max-width: 900px) {
-  section.banner .container .wrapper .block.top-block {
-    flex-direction: column;
-  }
 }
 section.banner .container .wrapper .block.top-block .card-left {
   width: 100%;
@@ -325,6 +466,12 @@ section.banner .container .wrapper .block.top-block .card-left {
     width: 100%;
   }
 }
+@media (max-width: 900px) and (max-width: 400px) {
+  section.banner .container .wrapper .block.top-block .card-left {
+    flex-direction: column;
+    height: 100%;
+  }
+}
 section.banner .container .wrapper .block.top-block .card-left .content-block {
   width: 50%;
   position: relative;
@@ -335,6 +482,11 @@ section.banner .container .wrapper .block.top-block .card-left .content-block {
 @media (max-width: 900px) {
   section.banner .container .wrapper .block.top-block .card-left .content-block {
     width: 40%;
+  }
+}
+@media (max-width: 400px) {
+  section.banner .container .wrapper .block.top-block .card-left .content-block {
+    width: 100%;
   }
 }
 section.banner .container .wrapper .block.top-block .card-left .content-block h1 {
@@ -369,6 +521,12 @@ section.banner .container .wrapper .block.top-block .card-left .right-block {
     width: 60%;
   }
 }
+@media (max-width: 900px) and (max-width: 400px) {
+  section.banner .container .wrapper .block.top-block .card-left .right-block {
+    width: 100%;
+    height: 18.75em;
+  }
+}
 section.banner .container .wrapper .block.top-block .card-left .right-block img {
   position: absolute;
   bottom: -1.25em;
@@ -376,76 +534,37 @@ section.banner .container .wrapper .block.top-block .card-left .right-block img 
   height: 100%;
   object-fit: cover;
 }
-.eye-container {
-  position: absolute;
-  width: 12.5em;
-  background-color: red;
-  top: 45%;
-  left: 34%;
-}
-@media (max-width: 900px) {
-  .eye-container {
-    display: none;
-  }
-}
-.eye-container .eye-wrapper {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-.eye-container .eye-wrapper .eye {
-  position: absolute;
-  display: inline-block;
-  border-radius: 50%;
-  height: 3.75em;
-  width: 3.75em;
-  background: #fff;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.2) 0px 18px 36px -18px inset;
-}
-.eye-container .eye-wrapper .eye.left-eye {
-  top: 0.375em;
-  left: 1.25em;
-}
-.eye-container .eye-wrapper .eye.right-eye {
-  top: 0.25em;
-  right: -1.25em;
-}
-.eye-container .eye-wrapper .eye::after {
-  position: absolute;
-  bottom: 1.0625em;
-  right: 0.625em;
-  width: 2.125em;
-  height: 2.125em;
-  background: #331E21;
-  border-radius: 50%;
-  content: " ";
-}
-
 section.offers {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 100%;
   margin-bottom: 1.25em;
+  padding: 12.5em 0;
 }
-section.offers .carouselWrapper {
+section.offers .scroll-trigger-container {
   width: 100%;
-  height: 6.25em;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
 }
-section.offers .carouselWrapper .carousel-text {
+section.offers .scroll-trigger-container .scroll-trigger-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.offers .scroll-trigger-container .scroll-trigger-wrapper .carousel-text {
   height: 100%;
   margin: 0 1.25em;
   display: inline-block;
 }
-section.offers .carouselWrapper .carousel-text p {
+section.offers .scroll-trigger-container .scroll-trigger-wrapper .carousel-text p {
   text-transform: uppercase;
-  font-size: 4.375em;
+  font-size: 6.25em;
   font-weight: 700;
   letter-spacing: 0.125em;
   white-space: nowrap;
 }
-section.offers .carouselWrapper .carousel-text .box-space {
+section.offers .scroll-trigger-container .scroll-trigger-wrapper .carousel-text .box-space {
   height: 5em;
   display: flex;
   justify-content: center;
@@ -498,7 +617,6 @@ section.projects .container .wrapper .project-block .card-block {
   flex-direction: column;
 }
 section.projects .container .wrapper .project-block .card-block .project-card {
-  border: 0.0625em solid #EEEEEE;
   border-radius: 1.875em;
   width: 100%;
   height: 100%;
@@ -506,9 +624,10 @@ section.projects .container .wrapper .project-block .card-block .project-card {
   max-width: 100em;
   display: flex;
   flex-direction: row;
-  padding: 0.625em;
-  background-color: #FCFCFC;
+  padding: 1.25em;
   margin-bottom: 6.25em;
+  background-color: #FCFCFC;
+  border: 0.0625em solid #EEEEEE;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
 }
 section.projects .container .wrapper .project-block .card-block .project-card .card-description {

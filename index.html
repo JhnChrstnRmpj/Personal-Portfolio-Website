@@ -7,9 +7,6 @@
   <link rel="stylesheet" href="/assets/styles/styles.css">
   <title>Homepage</title>
 
-  <style>
-
-  </style>
 </head>
 
 <body>
@@ -18,29 +15,56 @@
     <div class="container">
       <div class="wrapper">
 
-        <nav>
+        <nav class="web-nav">
           <div class="leftNav">
             <img src="/assets/images/icons/logo.png" alt="profile-picture">
           </div>
 
           <div class="rightNav">
             <a href="#">
-              <h6>My Works</h6>
+              <span>MY WORK</span>
             </a>
             <a href="#">
-              <h6>About Me</h6>
+              <span>ABOUT ME</span>
             </a>
             <a href="#">
-              <h6>Reach Out</h6>
+              <span>REACH OUT</span>
             </a>
           </div>
           <div class="active-tags">
             <div class="circle"></div>
             <h6>Available for work</h6>
           </div>
+
+          <div class="mobile-right-nav" id="hamburger">
+            <img src="/assets/images/icons/hamburger.png" alt="hamburger">
+          </div>
         </nav>
 
+        <div class="mobile-nav-container" id="mobile-container">
+          <div class="mobile-nav-wrapper" id="mobileMenu">
+            <div class="mobile-nav-menu">
+              <a href="">
+                <h5>MY WORK</h5>
+              </a>
+              <a href="">
+                <h5>ABOUT ME</h5>
+              </a>
+              <a href="">
+                <h5>REACH OUT</h5>
+              </a>
+            </div>
+            <!-- <div class="mobile-nav-images">
+              <div class="moving-img-wrapper">
+                <img src="/assets/images/8R.JPG" alt="">
+              </div>
+            </div> -->
+          </div>
+        </div>
+
       </div>
+
+    </div>
     </div>
   </header>
 
@@ -102,28 +126,8 @@
     </section>
 
     <section class="offers" id="offers">
-      <div class="carouselWrapper">
-        <div class="text-carousel focusin" data-direction="left">
-
-          <div class="carousel-text">
-            <div class="box-space">
-              <p>-</p>
-            </div>
-          </div>
-
-          <div class="carousel-text">
-            <p>WordPress Developer</p>
-          </div>
-
-          <div class="carousel-text">
-            <div class="box-space">
-              <p>-</p>
-            </div>
-          </div>
-
-          <div class="carousel-text">
-            <p>OLA Developer</p>
-          </div>
+      <div class="scroll-trigger-container">
+        <div class="scroll-trigger-wrapper">
 
           <div class="carousel-text">
             <div class="box-space">
@@ -133,16 +137,6 @@
 
           <div class="carousel-text">
             <p>Web Developer</p>
-          </div>
-
-          <div class="carousel-text">
-            <div class="box-space">
-              <p>-</p>
-            </div>
-          </div>
-
-          <div class="carousel-text">
-            <p>Email Developer</p>
           </div>
 
           <div class="carousel-text">
@@ -165,6 +159,7 @@
             <p>OLA Developer</p>
           </div>
 
+
           <div class="carousel-text">
             <div class="box-space">
               <p>-</p>
@@ -182,33 +177,21 @@
           </div>
 
           <div class="carousel-text">
-            <p>Email Developer</p>
+            <p>WordPress Developer</p>
+          </div>
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>OLA Developer</p>
           </div>
 
         </div>
-      </div>
-      <div class="carouselWrapper">
-        <div class="text-carousel focusin" data-direction="right">
-
-          <div class="carousel-text">
-            <div class="box-space">
-              <p>-</p>
-            </div>
-          </div>
-
-          <div class="carousel-text">
-            <p>WordPress Developer</p>
-          </div>
-
-          <div class="carousel-text">
-            <div class="box-space">
-              <p>-</p>
-            </div>
-          </div>
-
-          <div class="carousel-text">
-            <p>OLA Developer</p>
-          </div>
+        <div class="scroll-trigger-wrapper">
 
           <div class="carousel-text">
             <div class="box-space">
@@ -218,16 +201,6 @@
 
           <div class="carousel-text">
             <p>Web Developer</p>
-          </div>
-
-          <div class="carousel-text">
-            <div class="box-space">
-              <p>-</p>
-            </div>
-          </div>
-
-          <div class="carousel-text">
-            <p>Email Developer</p>
           </div>
 
           <div class="carousel-text">
@@ -250,6 +223,7 @@
             <p>OLA Developer</p>
           </div>
 
+
           <div class="carousel-text">
             <div class="box-space">
               <p>-</p>
@@ -267,7 +241,17 @@
           </div>
 
           <div class="carousel-text">
-            <p>Email Developer</p>
+            <p>WordPress Developer</p>
+          </div>
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>OLA Developer</p>
           </div>
 
         </div>
@@ -280,8 +264,10 @@
 
           <div class="project-block">
             <div class="project-headline">
-              <h6>FEATURED PROJECTS</h6>
-              <h2>THESE ARE SOME OF MY WORKS!</h2>
+              <div class="project-headings">
+                <h6>FEATURED PROJECTS</h6>
+              </div>
+              <h2>THESE ARE SOME OF MY RECENT WORKS!</h2>
             </div>
 
             <div class="card-block">
@@ -320,17 +306,18 @@
 
 </body>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-
+<script src="/assets/js/header.js"></script>
 <script src="/assets/js/roller.js"></script>
 <script src="/assets/js/script.js"></script>
 <script src="/assets/js/background-animation.js"></script>
-<script src="/assets/js/cursor.js"></script>
 <script src="/assets/js/moving-eye.js"></script>
-
+<script src="/assets/js/scrolltrigger.js"></script>
 
 
 </html>

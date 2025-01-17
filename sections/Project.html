@@ -21,7 +21,7 @@
           <div class="project-block">
             <div class="project-headline">
               <h6>FEATURED PROJECTS</h6>
-              <h2>THESE ARE SOME OF MY WORKS!</h2>
+              <h2>THESE ARE SOME OF MY RECENT WORKS!</h2>
             </div>
 
             <div class="project-card">
@@ -72,34 +72,7 @@
   <script src="/assets/js/roller.js"></script>
   <script src="/assets/js/script.js"></script>
   <script src="/assets/js/background-animation.js"></script>
-  <script src="/assets/js/cursor.js"></script>
   <script src="/assets/js/moving-eye.js"></script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      gsap.registerPlugin(ScrollTrigger);
-
-      gsap.utils.toArray('.project-card').forEach(card => {
-        gsap.fromTo(card,
-          {
-            scale: 0.5,
-            opacity: 0
-          },
-          {
-            scale: 1,
-            opacity: 1,
-            scrollTrigger: {
-              trigger: card,
-              start: "top 80%",
-              end: "top 30%",
-              scrub: true,
-              markers: true
-            }
-          }
-        );
-      });
-    });
-  </script>
 
 </body>
 

@@ -24,8 +24,92 @@
   <main>
 
     <section class="offers" id="offers">
-      <div class="carouselWrapper">
-        <div class="text-carousel focusin">
+      <div class="scroll-trigger-container">
+        <div class="scroll-trigger-wrapper">
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>WordPress Developer</p>
+          </div>
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>OLA Developer</p>
+          </div>
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>Web Developer</p>
+          </div>
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>Email Developer</p>
+          </div>
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>WordPress Developer</p>
+          </div>
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>OLA Developer</p>
+          </div>
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>Web Developer</p>
+          </div>
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>Email Developer</p>
+          </div>
+
+        </div>
+
+        <div class="scroll-trigger-wrapper">
 
           <div class="carousel-text">
             <div class="box-space">
@@ -117,33 +201,30 @@
 <script src="/assets/js/roller.js"></script>
 <script src="/assets/js/script.js"></script>
 
+<!-- Include GSAP and ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
 <script>
-  gsap.registerPlugin(ScrollTrigger);
+  document.addEventListener("DOMContentLoaded", () => {
 
-  const images = gsap.utils.toArray('img');
-  const loader = document.querySelector('.loader--text');
-  const updateProgress = (instance) =>
-    loader.textContent = `${Math.round(instance.progressedCount * 100 / images.length)}%`;
+    gsap.registerPlugin(ScrollTrigger);
+    const direction = "left";
+    const xPercent = direction === "left" ? -100 : 100;
 
-  const showDemo = () => {
-    document.body.style.overflow = 'auto';
-    document.scrollingElement.scrollTo(0, 0);
-    gsap.to(document.querySelector('.loader'), { autoAlpha: 0 });
-
-    gsap.utils.toArray('section').forEach((section, index) => {
-      const w = section.querySelector('.wrapper');
-      const [x, xEnd] = (index % 2) ? ['100%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
-      gsap.fromTo(w, { x }, {
-        x: xEnd,
-        scrollTrigger: {
-          trigger: section,
-          scrub: 0.5
-        }
-      });
+    gsap.to(".scroll-trigger-wrapper", {
+      xPercent: -100,
+      ease: "ease-in-out",
+      scrollTrigger: {
+        trigger: "body",
+        start: "top center",
+        end: "bottom bottom",
+        scrub: 1,
+        markers: true,
+      }
     });
-  }
-
-  imagesLoaded(images).on('progress', updateProgress).on('always', showDemo);
+  });
 </script>
+
 
 </html>

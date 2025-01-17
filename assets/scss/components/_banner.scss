@@ -2,9 +2,11 @@ section.banner {
   position: relative; 
   width: 100%;
   z-index: 1;
-  // max-width: em(1920);
-  margin-top: em(18);
+  top: em(20);
   margin-bottom: em(20);
+  @include md {
+    top: em(120);
+  }
 
   & .container {
     width: 100%;
@@ -13,6 +15,10 @@ section.banner {
     padding: 0 em(40);
     display: flex;
     justify-content: center;
+    @include sm {
+      flex-direction: column;
+      padding: 0 em(10);
+    }
 
     & .wrapper {
       width: 100%;
@@ -26,9 +32,6 @@ section.banner {
         &.top-block {
           display: flex;
           gap: em(20);
-          @include md {
-            flex-direction: column;
-          }
 
           & .card-left {
             width: 100%;
@@ -41,6 +44,11 @@ section.banner {
             @include md{
               height: em(600);
               width: 100%;
+
+              @include sm {
+                flex-direction: column;
+                height: 100%;
+              }
             }
 
             & .content-block {
@@ -51,6 +59,10 @@ section.banner {
               justify-content: center;
               @include md {
                 width: 40%;
+              }
+
+              @include sm {
+                width: 100%;
               }
 
               h1{
@@ -82,6 +94,11 @@ section.banner {
               position: relative;
               @include md {
                 width: 60%;
+                
+                @include sm {
+                  width: 100%;
+                  height: em(300);
+                }
               }
 
               & img {
@@ -101,57 +118,6 @@ section.banner {
             }
           }
         }
-      }
-    }
-  }
-}
-
-//STYLE FOR AVATAR EYES
-.eye-container {
-  position: absolute; 
-  width: em(200);
-  // height: em(50);
-  background-color: red;
-  top: 45%; 
-  left: 34%;
-
-  @include md {
-    display: none;
-  }
-
-  & .eye-wrapper {
-    width: 100%;
-    height: 100%;
-    position: relative;
-
-    & .eye {
-      position: absolute;
-      display: inline-block;
-      border-radius: 50%;
-      height: em(60);
-      width: em(60);
-      background: #fff;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.2) 0px 18px 36px -18px inset;
-  
-      &.left-eye {
-        top: em(6);
-        left: em(20);
-      }
-      &.right-eye {
-        top: em(4);
-        right: em(-20);
-      }
-  
-      &::after {
-        position: absolute;
-        bottom: em(17);
-        right: em(10);
-        width: em(34);
-        height: em(34);
-        background: #331E21;
-        border-radius: 50%;
-        content: " ";
-
       }
     }
   }

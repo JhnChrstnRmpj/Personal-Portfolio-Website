@@ -5,6 +5,9 @@
   justify-content: flex-start;
   display: flex;
   gap: em(10);
+  @include sm {
+    display: none;
+  }
 
   & .circle{
     width: em(12);
