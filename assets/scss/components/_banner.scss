@@ -2,10 +2,9 @@ section.banner {
   position: relative; 
   width: 100%;
   z-index: 1;
-  top: em(20);
-  margin-bottom: em(20);
+  margin-top: em(20);
   @include md {
-    top: em(120);
+    margin-top: em(120);
   }
 
   & .container {

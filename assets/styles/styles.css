@@ -417,12 +417,11 @@ section.banner {
   position: relative;
   width: 100%;
   z-index: 1;
-  top: 1.25em;
-  margin-bottom: 1.25em;
+  margin-top: 1.25em;
 }
 @media (max-width: 900px) {
   section.banner {
-    top: 7.5em;
+    margin-top: 7.5em;
   }
 }
 section.banner .container {
@@ -538,8 +537,12 @@ section.offers {
   position: relative;
   overflow: hidden;
   width: 100%;
-  margin-bottom: 1.25em;
   padding: 12.5em 0;
+}
+@media (max-width: 400px) {
+  section.offers {
+    padding: 9.375em 0;
+  }
 }
 section.offers .scroll-trigger-container {
   width: 100%;
@@ -564,6 +567,11 @@ section.offers .scroll-trigger-container .scroll-trigger-wrapper .carousel-text 
   letter-spacing: 0.125em;
   white-space: nowrap;
 }
+@media (max-width: 400px) {
+  section.offers .scroll-trigger-container .scroll-trigger-wrapper .carousel-text p {
+    font-size: 3.125em;
+  }
+}
 section.offers .scroll-trigger-container .scroll-trigger-wrapper .carousel-text .box-space {
   height: 5em;
   display: flex;
@@ -575,7 +583,6 @@ section.projects {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  margin-top: 1.25em;
   padding: 2.5em;
 }
 section.projects .container {

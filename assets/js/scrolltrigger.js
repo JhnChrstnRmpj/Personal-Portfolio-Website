@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   gsap.registerPlugin(ScrollTrigger);
   
-  // Animation for the first scroll-trigger-wrapper (scrolling to the left)
   gsap.to(".scroll-trigger-wrapper:nth-child(1)", {
     xPercent: -100,
     ease: "ease-in-out",

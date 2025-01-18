@@ -2,8 +2,11 @@ section.offers {
   position: relative;
   overflow: hidden;
   width: 100%;
-  margin-bottom: em(20);
   padding: em(200) 0;
+
+  @include sm {
+    padding: em(150) 0;
+  }
   
   & .scroll-trigger-container {
     width: 100%;
@@ -16,26 +19,29 @@ section.offers {
       justify-content: center;
       align-items: center;
 
-          & .carousel-text {
-      height: 100%;
-      margin: 0 em(20);
-      display: inline-block;
+      & .carousel-text {
+        height: 100%;
+        margin: 0 em(20);
+        display: inline-block;
 
-      & p {
-        text-transform: uppercase;
-        font-size: em(100);
-        font-weight: 700;
-        letter-spacing: em(2);
-        white-space: nowrap;
-      }
+        & p {
+          text-transform: uppercase;
+          font-size: em(100);
+          font-weight: 700;
+          letter-spacing: em(2);
+          white-space: nowrap;
+          @include sm {
+            font-size: em(50);
+          }
+        }
 
-      & .box-space {
-        height: em(80);
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        & .box-space {
+          height: em(80);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
       }
-    }
     }
   }
 }
