@@ -285,10 +285,12 @@ header .container {
   width: 100%;
   height: 100%;
   max-width: 103.125em;
-  padding: 1.25em 2.5em;
+  padding: 1.25em 2.5em 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(2px);
+  transition: background-color 0.3s ease;
 }
 @media (max-width: 400px) {
   header .container {
@@ -300,7 +302,7 @@ header .container .wrapper {
   padding: 0.625em 1.875em;
   border-radius: 2.5em;
   background-color: #EEEFF2;
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 15px -3px rgba(23, 22, 22, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.062745098);
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
 }
@@ -417,7 +419,7 @@ section.banner {
   position: relative;
   width: 100%;
   z-index: 1;
-  margin-top: 1.25em;
+  margin-top: -0.375em;
 }
 @media (max-width: 900px) {
   section.banner {
@@ -431,8 +433,9 @@ section.banner .container {
   padding: 0 2.5em;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-@media (max-width: 400px) {
+@media (max-width: 900px) {
   section.banner .container {
     flex-direction: column;
     padding: 0 0.625em;
@@ -446,12 +449,10 @@ section.banner .container .wrapper {
 section.banner .container .wrapper .block {
   width: 100%;
   border-radius: 1.25em;
-}
-section.banner .container .wrapper .block.top-block {
   display: flex;
   gap: 1.25em;
 }
-section.banner .container .wrapper .block.top-block .card-left {
+section.banner .container .wrapper .block .card {
   width: 100%;
   display: flex;
   gap: 1.25em;
@@ -460,79 +461,80 @@ section.banner .container .wrapper .block.top-block .card-left {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
 }
 @media (max-width: 900px) {
-  section.banner .container .wrapper .block.top-block .card-left {
+  section.banner .container .wrapper .block .card {
     height: 37.5em;
     width: 100%;
   }
 }
 @media (max-width: 900px) and (max-width: 400px) {
-  section.banner .container .wrapper .block.top-block .card-left {
+  section.banner .container .wrapper .block .card {
     flex-direction: column;
     height: 100%;
   }
 }
-section.banner .container .wrapper .block.top-block .card-left .content-block {
+section.banner .container .wrapper .block .card .content-block {
   width: 50%;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-@media (max-width: 900px) {
-  section.banner .container .wrapper .block.top-block .card-left .content-block {
-    width: 40%;
-  }
-}
 @media (max-width: 400px) {
-  section.banner .container .wrapper .block.top-block .card-left .content-block {
+  section.banner .container .wrapper .block .card .content-block {
     width: 100%;
   }
 }
-section.banner .container .wrapper .block.top-block .card-left .content-block h1 {
+section.banner .container .wrapper .block .card .content-block h1 {
   font-weight: 900;
   letter-spacing: -0.09375em;
 }
 @media (max-width: 900px) {
-  section.banner .container .wrapper .block.top-block .card-left .content-block h1 {
+  section.banner .container .wrapper .block .card .content-block h1 {
     font-size: 3.75em;
   }
 }
-section.banner .container .wrapper .block.top-block .card-left .content-block h5 {
+section.banner .container .wrapper .block .card .content-block h5 {
   opacity: 0.8;
   letter-spacing: -0.025em;
   margin-bottom: 1.25em;
+  padding-left: 0.625em;
 }
-section.banner .container .wrapper .block.top-block .card-left .content-block h5 span {
+section.banner .container .wrapper .block .card .content-block h5 span {
   font-weight: 600;
 }
-section.banner .container .wrapper .block.top-block .card-left .content-block h6 {
+section.banner .container .wrapper .block .card .content-block h6 {
   letter-spacing: -0.05em;
 }
-section.banner .container .wrapper .block.top-block .card-left .content-block .bottom-content {
+section.banner .container .wrapper .block .card .content-block .bottom-content {
   display: flex;
 }
-section.banner .container .wrapper .block.top-block .card-left .right-block {
+section.banner .container .wrapper .block .card .content-block .bottom-content p {
+  font-size: 1.125em;
+  line-height: 200%;
+}
+section.banner .container .wrapper .block .card .right-block {
   width: 50%;
   position: relative;
 }
 @media (max-width: 900px) {
-  section.banner .container .wrapper .block.top-block .card-left .right-block {
+  section.banner .container .wrapper .block .card .right-block {
     width: 60%;
   }
 }
 @media (max-width: 900px) and (max-width: 400px) {
-  section.banner .container .wrapper .block.top-block .card-left .right-block {
+  section.banner .container .wrapper .block .card .right-block {
     width: 100%;
     height: 18.75em;
   }
 }
-section.banner .container .wrapper .block.top-block .card-left .right-block img {
+section.banner .container .wrapper .block .card .right-block img {
   position: absolute;
   bottom: -1.25em;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 section.offers {
   position: relative;
   overflow: hidden;
@@ -585,16 +587,19 @@ section.projects {
   z-index: 1;
   padding: 2.5em;
 }
+@media (max-width: 900px) {
+  section.projects {
+    padding: 0.625em;
+  }
+}
 section.projects .container {
   width: 100%;
   height: 100%;
+  min-height: 56.25em;
 }
 section.projects .container .wrapper {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 section.projects .container .wrapper .project-block {
   width: 100%;
@@ -610,10 +615,15 @@ section.projects .container .wrapper .project-block .project-headline {
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  margin-bottom: 2.5em;
+  margin-bottom: 3.125em;
 }
 section.projects .container .wrapper .project-block .project-headline h6 {
   margin-bottom: 0.625em;
+}
+@media (max-width: 400px) {
+  section.projects .container .wrapper .project-block .project-headline h2 {
+    font-size: 2.5em;
+  }
 }
 section.projects .container .wrapper .project-block .card-block {
   width: 100%;
@@ -622,6 +632,12 @@ section.projects .container .wrapper .project-block .card-block {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 6.25em;
+}
+@media (max-width: 400px) {
+  section.projects .container .wrapper .project-block .card-block {
+    gap: 1.875em;
+  }
 }
 section.projects .container .wrapper .project-block .card-block .project-card {
   border-radius: 1.875em;
@@ -632,24 +648,94 @@ section.projects .container .wrapper .project-block .card-block .project-card {
   display: flex;
   flex-direction: row;
   padding: 1.25em;
-  margin-bottom: 6.25em;
   background-color: #FCFCFC;
   border: 0.0625em solid #EEEEEE;
+  gap: 1.25em;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+}
+@media (max-width: 400px) {
+  section.projects .container .wrapper .project-block .card-block .project-card {
+    flex-direction: column;
+    max-height: 100%;
+    padding: 0.625em;
+  }
 }
 section.projects .container .wrapper .project-block .card-block .project-card .card-description {
   width: 30%;
-  padding: 2.5em;
+  padding: 0 0 0 1.25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-section.projects .container .wrapper .project-block .card-block .project-card .card-image {
-  width: 70%;
-  border-radius: 1.875em;
+@media (max-width: 900px) {
+  section.projects .container .wrapper .project-block .card-block .project-card .card-description {
+    padding: 0em;
+    width: 60%;
+    gap: 2.5em;
+  }
 }
-section.projects .container .wrapper .project-block .card-block .project-card .card-image img {
-  border-radius: 1.25em;
+@media (max-width: 900px) and (max-width: 400px) {
+  section.projects .container .wrapper .project-block .card-block .project-card .card-description {
+    width: 100%;
+  }
+}
+section.projects .container .wrapper .project-block .card-block .project-card .card-description .project-card-icon {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  object-fit: cover;
+}
+section.projects .container .wrapper .project-block .card-block .project-card .card-description .project-card-icon .icon-wrapper {
+  max-width: 3.75em;
+  height: 3.75em;
+}
+section.projects .container .wrapper .project-block .card-block .project-card .card-description .project-card-icon .icon-wrapper img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
+}
+section.projects .container .wrapper .project-block .card-block .project-card .card-description .project-card-icon .card-title {
+  font-size: 2.5em;
+  font-weight: 600;
+  opacity: 0.8;
+  line-height: 120%;
+}
+section.projects .container .wrapper .project-block .card-block .project-card .card-description p {
+  line-height: 200%;
+}
+section.projects .container .wrapper .project-block .card-block .project-card .card-description .description-tags {
+  display: flex;
+  width: 100%;
+  gap: 1.25em;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+@media (max-width: 400px) {
+  section.projects .container .wrapper .project-block .card-block .project-card .card-description .description-tags {
+    margin-bottom: 1.25em;
+  }
+}
+section.projects .container .wrapper .project-block .card-block .project-card .card-image {
+  position: relative;
+  width: 70%;
+  min-height: 100%;
+  border-radius: 1.875em;
+}
+@media (max-width: 400px) {
+  section.projects .container .wrapper .project-block .card-block .project-card .card-image {
+    width: 100%;
+  }
+}
+section.projects .container .wrapper .project-block .card-block .project-card .card-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25em;
   object-fit: cover;
+}
+@media (max-width: 400px) {
+  section.projects .container .wrapper .project-block .card-block .project-card .card-image img {
+    min-height: 18.75em;
+  }
 }
 
 section.theatreSlider {

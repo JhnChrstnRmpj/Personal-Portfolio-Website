@@ -2,7 +2,7 @@ section.banner {
   position: relative; 
   width: 100%;
   z-index: 1;
-  margin-top: em(20);
+  margin-top: em(-6);
   @include md {
     margin-top: em(120);
   }
@@ -14,7 +14,8 @@ section.banner {
     padding: 0 em(40);
     display: flex;
     justify-content: center;
-    @include sm {
+    align-items: center;
+    @include md {
       flex-direction: column;
       padding: 0 em(10);
     }
@@ -27,93 +28,88 @@ section.banner {
       & .block { 
         width: 100%;
         border-radius: em(20);
+        display: flex;
+        gap: em(20);
 
-        &.top-block {
+        & .card {
+          width: 100%;
           display: flex;
           gap: em(20);
-
-          & .card-left {
+          flex-direction: row;
+          height: em(850);
+          box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+          
+          @include md{
+            height: em(600);
             width: 100%;
-            display: flex;
-            gap: em(20);
-            flex-direction: row;
-            height: em(850);
-            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
-            
-            @include md{
-              height: em(600);
-              width: 100%;
 
+            @include sm {
+              flex-direction: column;
+              height: 100%;
+            }
+          }
+
+          & .content-block {
+            width: 50%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @include sm {
+              width: 100%;
+            }
+
+            h1{
+              font-weight: 900;
+              letter-spacing:em(-1.5);
+
+              @include md {
+                font-size: em(60);
+              }
+            }
+            h5{
+              opacity: 0.8;
+              letter-spacing:em(-0.4);
+              margin-bottom: em(20);
+              padding-left: em(10);
+              & span{
+                font-weight: 600;
+              }
+            }
+            h6{
+              letter-spacing:em(-0.8);
+            }
+            & .bottom-content {
+              display: flex;
+
+              & p {
+                font-size: em(18);
+                line-height: 200%;
+              }
+            }
+          } 
+
+          & .right-block {
+            width: 50%;
+            position: relative;
+            @include md {
+              width: 60%;
+              
               @include sm {
-                flex-direction: column;
-                height: 100%;
+                width: 100%;
+                height: em(300);
               }
             }
 
-            & .content-block {
-              width: 50%;
-              position: relative;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              @include md {
-                width: 40%;
-              }
+            & img {
+              position: absolute;
+              bottom: em(-20);
+              // top: em(-22);
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
 
-              @include sm {
-                width: 100%;
-              }
-
-              h1{
-                font-weight: 900;
-                letter-spacing:em(-1.5);
-
-                @include md {
-                  font-size: em(60);
-                }
-              }
-              h5{
-                opacity: 0.8;
-                letter-spacing:em(-0.4);
-                margin-bottom: em(20);
-                & span{
-                  font-weight: 600;
-                }
-              }
-              h6{
-                letter-spacing:em(-0.8);
-              }
-              & .bottom-content {
-                display: flex;
-              }
-            } 
-
-            & .right-block {
-              width: 50%;
-              position: relative;
-              @include md {
-                width: 60%;
-                
-                @include sm {
-                  width: 100%;
-                  height: em(300);
-                }
-              }
-
-              & img {
-                position: absolute;
-                bottom: em(-20);
-                // top: em(-22);
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-
-                @include md {
-                  // width: 110%;
-                  // height: 110%;
-                  // object-fit: cover;
-                }
-              }
             }
           }
         }
