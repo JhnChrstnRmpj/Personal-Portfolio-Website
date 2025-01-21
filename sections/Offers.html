@@ -34,37 +34,7 @@
           </div>
 
           <div class="carousel-text">
-            <p>WordPress Developer</p>
-          </div>
-
-          <div class="carousel-text">
-            <div class="box-space">
-              <p>-</p>
-            </div>
-          </div>
-
-          <div class="carousel-text">
-            <p>OLA Developer</p>
-          </div>
-
-          <div class="carousel-text">
-            <div class="box-space">
-              <p>-</p>
-            </div>
-          </div>
-
-          <div class="carousel-text">
             <p>Web Developer</p>
-          </div>
-
-          <div class="carousel-text">
-            <div class="box-space">
-              <p>-</p>
-            </div>
-          </div>
-
-          <div class="carousel-text">
-            <p>Email Developer</p>
           </div>
 
           <div class="carousel-text">
@@ -87,6 +57,7 @@
             <p>OLA Developer</p>
           </div>
 
+
           <div class="carousel-text">
             <div class="box-space">
               <p>-</p>
@@ -104,11 +75,20 @@
           </div>
 
           <div class="carousel-text">
-            <p>Email Developer</p>
+            <p>WordPress Developer</p>
+          </div>
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>OLA Developer</p>
           </div>
 
         </div>
-
         <div class="scroll-trigger-wrapper">
 
           <div class="carousel-text">
@@ -118,37 +98,7 @@
           </div>
 
           <div class="carousel-text">
-            <p>WordPress Developer</p>
-          </div>
-
-          <div class="carousel-text">
-            <div class="box-space">
-              <p>-</p>
-            </div>
-          </div>
-
-          <div class="carousel-text">
-            <p>OLA Developer</p>
-          </div>
-
-          <div class="carousel-text">
-            <div class="box-space">
-              <p>-</p>
-            </div>
-          </div>
-
-          <div class="carousel-text">
             <p>Web Developer</p>
-          </div>
-
-          <div class="carousel-text">
-            <div class="box-space">
-              <p>-</p>
-            </div>
-          </div>
-
-          <div class="carousel-text">
-            <p>Email Developer</p>
           </div>
 
           <div class="carousel-text">
@@ -171,6 +121,7 @@
             <p>OLA Developer</p>
           </div>
 
+
           <div class="carousel-text">
             <div class="box-space">
               <p>-</p>
@@ -188,7 +139,17 @@
           </div>
 
           <div class="carousel-text">
-            <p>Email Developer</p>
+            <p>WordPress Developer</p>
+          </div>
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>OLA Developer</p>
           </div>
 
         </div>
@@ -198,33 +159,11 @@
   </main>
 
 </body>
-<script src="/assets/js/roller.js"></script>
-<script src="/assets/js/script.js"></script>
 
-<!-- Include GSAP and ScrollTrigger -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-
-    gsap.registerPlugin(ScrollTrigger);
-    const direction = "left";
-    const xPercent = direction === "left" ? -100 : 100;
-
-    gsap.to(".scroll-trigger-wrapper", {
-      xPercent: -100,
-      ease: "ease-in-out",
-      scrollTrigger: {
-        trigger: "body",
-        start: "top center",
-        end: "bottom bottom",
-        scrub: 1,
-        markers: true,
-      }
-    });
-  });
-</script>
+<script src="/assets/js/scrolltrigger.js"></script>
 
 
 </html>

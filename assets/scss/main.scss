@@ -24,9 +24,9 @@ $referenceWidth: 1920;
   text-decoration: none;
   outline: none;
   scroll-behavior: smooth;
-  ::-webkit-scrollbar {
-    display: none;
-  }
+  // ::-webkit-scrollbar {
+  //   display: none;
+  // }
 }
 
 *[animated] {

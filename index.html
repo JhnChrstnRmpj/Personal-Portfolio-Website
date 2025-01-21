@@ -405,6 +405,62 @@
         </div>
       </div>
     </section>
+
+
+    <section class="about-me" id="about">
+      <div class="container">
+        <div class="wrapper">
+
+          <div class="about-headline">
+            <div class="about-headings">
+              <h6>ABOUT ME</h6>
+            </div>
+            <h2>IF YOU WANNA KNOW <br> MORE ABOUT ME</h2>
+          </div>
+
+          <div class="row">
+            <div class="mason-block block-left">
+              <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque cupiditate debitis ratione dolorem
+                quibusdam laboriosam magni. Earum nulla laudantium eius facilis explicabo molestias consequuntur placeat
+                cumque, maxime odio, necessitatibus perspiciatis!</h6>
+            </div>
+
+            <div class="mason-block block-right">
+
+              <div class="about-img-wrapper img1">
+                <img src="/assets/images/aboutme-1.JPG" alt="">
+              </div>
+
+              <div class="about-img-wrapper img2">
+                <img src="/assets/images/aboutme-2.JPG" alt="">
+              </div>
+
+              <div class="about-img-wrapper img3">
+                <img src="/assets/images/aboutme-3.JPG" alt="">
+              </div>
+
+              <div class="about-img-wrapper img4">
+                <img src="/assets/images/aboutme-4.JPG" alt="">
+              </div>
+
+              <div class="about-img-wrapper img5">
+                <img src="/assets/images/aboutme-5.JPG" alt="">
+              </div>
+
+              <div class="about-img-wrapper img6">
+                <img src="/assets/images/aboutme-6.JPG" alt="">
+              </div>
+
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="mason-block block-bottom">123</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
   </main>
 
 </body>
@@ -421,6 +477,45 @@
 <script src="/assets/js/background-animation.js"></script>
 <script src="/assets/js/moving-eye.js"></script>
 <script src="/assets/js/scrolltrigger.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Select all image wrappers
+    const imgWrappers = document.querySelectorAll(".about-img-wrapper");
+
+    // Animate images on scroll
+    gsap.fromTo(
+      imgWrappers,
+      {
+        opacity: 0, // Start with images invisible
+        x: (i) => (Math.random() < 0.5 ? -300 : 300), // Random horizontal position (left or right)
+        y: (i) => (Math.random() < 0.5 ? -200 : 200), // Random vertical position (above or below)
+      },
+      {
+        opacity: 1, // Fade in
+        x: 0, // Move to their natural positions
+        y: 0,
+        duration: 1.5, // Animation duration
+        ease: "expo.out", // Smooth easing
+        stagger: 0.2, // Delay between each image
+        scrollTrigger: {
+          trigger: "section.about-me", // Trigger animation when this section enters the viewport
+          start: "top center", // Start animation when the top of the section reaches the center of the viewport
+          end: "top 10%", // End animation when the bottom of the section reaches 20% of the viewport height
+          scrub: true, // Smooth scrubbing effect
+        },
+      }
+    );
+  });
+
+
+
+
+
+
+</script>
 
 
 </html>

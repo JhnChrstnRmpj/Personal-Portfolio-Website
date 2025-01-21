@@ -38,6 +38,7 @@ section.projects {
           }
 
           & h2 {
+            letter-spacing: em(2);
             @include sm{
               font-size: em(40);
             }
@@ -61,7 +62,7 @@ section.projects {
             border-radius: em(30);
             width: 100%;
             height: 100%;
-            max-height: em(700);
+            min-height: em(900);
             max-width: em(1600);
             display: flex;
             flex-direction: row;
@@ -70,15 +71,18 @@ section.projects {
             border: em(1) solid $white;
             gap: em(20);
             box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
-            @include sm {
-              flex-direction: column;
-              max-height: 100%;
-              padding: em(10);
+            @include md {
+              min-height: em(600);
+              @include sm {
+                flex-direction: column;
+                max-height: 100%;
+                padding: em(10);
+              }
             }
   
             .card-description {
               width: 30%;
-              padding: 0 0 0 em(20);  
+              padding: em(20) 0 em(20) em(20);  
               display: flex;
               flex-direction: column;
               justify-content: space-between;
