@@ -19,7 +19,7 @@ header {
     transition: background-color 0.3s ease;
 
     @include sm {
-      padding: em(10);
+      padding: em(10) em(10) 0;
     }
 
     & .wrapper {
@@ -114,7 +114,7 @@ header {
           position: absolute;
           max-width: em(355);
           width: 100%;
-          transition: all 0.1s ease-in;
+          transition: all 0.01s ease-in;
           z-index: 1;
           left: em(10);
           

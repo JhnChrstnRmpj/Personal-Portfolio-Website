@@ -2,15 +2,18 @@ section.projects {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  padding: em(40);
+  padding: em(40) em(40) em(200) em(40);
+  display: flex;
+  justify-content: center;
 
   @include md {
-    padding: em(10);
+    padding: em(10) em(10) em(200) em(10);
   }
 
   & .container {
     width: 100%;
     height: 100%;
+    max-width: em(1600);
     min-height: em(900);
 
     & .wrapper {
@@ -20,16 +23,12 @@ section.projects {
       .project-block {
         width: 100%;
         display: flex;
-        justify-content: center;
-        align-items: center;
         flex-direction: column;
 
         .project-headline {
           width: 100%;
-          max-width: em(600);
+          max-width: em(800);
           display: flex;
-          justify-content: center;
-          text-align: center;
           flex-direction: column;
           margin-bottom: em(50);
 
@@ -38,7 +37,8 @@ section.projects {
           }
 
           & h2 {
-            letter-spacing: em(2);
+            font-size: em(80);
+            font-weight: 600;
             @include sm{
               font-size: em(40);
             }
@@ -76,7 +76,6 @@ section.projects {
               @include sm {
                 flex-direction: column;
                 max-height: 100%;
-                padding: em(10);
               }
             }
   
