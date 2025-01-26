@@ -73,3 +73,23 @@ window.addEventListener('resize', () => {
 });
 
 hamburger.addEventListener('click', toggleMobileNav);
+
+const links = document.querySelectorAll('.mobile-nav-menu a');
+
+links.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault(); 
+
+    const targetId = link.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+
+    gsap.to(window, {
+      scrollTo: targetSection,
+      duration: 0.5,
+      ease: 'power3.inOut',
+      onComplete: () => {
+        closeMobileNav();
+      }
+    });
+  });
+});
