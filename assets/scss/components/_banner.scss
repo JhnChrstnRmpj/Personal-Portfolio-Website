@@ -83,6 +83,7 @@ section.banner {
             }
             & .bottom-content {
               display: flex;
+              padding-left: em(10);
 
               & p {
                 font-size: em(18);

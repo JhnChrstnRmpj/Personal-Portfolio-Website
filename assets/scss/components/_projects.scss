@@ -8,6 +8,10 @@ section.projects {
 
   @include md {
     padding: em(10) em(10) em(200) em(10);
+
+    @include sm{
+      padding-bottom: em(150);
+    }
   }
 
   & .container {

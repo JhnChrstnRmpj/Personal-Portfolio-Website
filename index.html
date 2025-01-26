@@ -5,13 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/styles/styles.css">
-  <title>Homepage</title>
+  <title>Jhon Christian | Web Developer</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/browser-logo/favicon-32x32.png" disabled>
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/browser-logo/favicon-16x16.png">
+  <link rel="shortcut icon" href="assets/images/browser-logo/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/images/browser-logo/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/browser-logo/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/images/browser-logo/android-chrome-512x512.png">
+  <link rel="manifest" href="assets/images/browser-logo/site.webmanifest">
+
 
 </head>
 
 <body>
 
-  <header>
+  <header animated="fade slideY" yOffset="-50" delay="0.5">
     <div class="container">
       <div class="wrapper">
 
@@ -70,9 +79,9 @@
     </div>
   </header>
 
-  <main>
+  <main id="content">
 
-    <section class="banner" id="banner">
+    <section class="banner" id="banner" animated="fade slideY" delay="1">
 
       <div class="container">
         <div class="wrapper">
@@ -80,7 +89,7 @@
           <div class="block">
 
             <div class="card">
-              <div class="ink"></div>
+              <!-- <div class="ink"></div> -->
               <div class="content-block">
 
                 <div class="center-content">
@@ -263,15 +272,15 @@
 
           <div class="project-block">
             <div class="project-headline">
-              <div class="project-headings">
+              <div class="project-headings" animated="fade slideY">
                 <h6>FEATURED PROJECTS</h6>
               </div>
-              <h2>These are my recent works!</h2>
+              <h2 animated="fade slideY">These are my recent works!</h2>
             </div>
 
             <div class="card-block">
 
-              <div class="project-card">
+              <div class="project-card" animated="fade slideY" yOffset="50">
 
                 <div class="card-description">
                   <div class="project-card-icon">
@@ -316,7 +325,7 @@
                 </div>
               </div>
 
-              <div class="project-card">
+              <div class="project-card" animated="fade slideY" yOffset="50">
 
                 <div class="card-description">
                   <div class="project-card-icon">
@@ -358,7 +367,7 @@
                 </div>
               </div>
 
-              <div class="project-card">
+              <div class="project-card" animated="fade slideY" yOffset="50">
 
                 <div class="card-description">
                   <div class="project-card-icon">
@@ -413,8 +422,8 @@
         <div class="wrapper">
 
           <div class="about-headline">
-            <h6>ABOUT ME</h6>
-            <h2>If you wanna know more about me :)</h2>
+            <h6 animated="fade slideY">ABOUT ME</h6>
+            <h2 animated="fade slideY">If you wanna know more about me :)</h2>
           </div>
 
           <div class="row row2" style="margin-bottom: 20px;">
@@ -465,14 +474,14 @@
           </div>
 
           <div class="row row1">
-            <div class="mason-block block-left">
+            <div class="mason-block block-left" animated="fade scale">
               <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque cupiditate debitis ratione dolorem
                 quibusdam laboriosam magni.<br><br> Earum nulla laudantium eius facilis explicabo molestias consequuntur
                 placeat
                 cumque, maxime odio, necessitatibus perspiciatis!
               </h6>
             </div>
-            <div class="mason-block block-right">
+            <div class="mason-block block-right" animated="fade scale">
 
               <div class="block-wrapper">
 
@@ -605,25 +614,25 @@
     <div class="container">
       <div class="wrapper">
 
-        <div class="heading">
+        <div class="heading" animated="fade slideY">
           <h2>Let's work <br> together!</h2>
         </div>
 
-        <div class="line"></div>
+        <div class="line" animated="fade slideY"></div>
 
-        <div class="block">
+        <div class="block" animated="fade slideY">
 
-          <div class="button-container">
-            <button class="pushable" href="mailto:rempajo30113@gmail.com">
+          <div class="button-container" animated="fade slideY">
+            <a class="pushable" href="mailto:rempajo30113@gmail.com">
               <span class="front">
                 Connect with me!
               </span>
-            </button>
+            </a>
           </div>
 
 
           <div class="socials-container">
-            <div class="socials-wrapper">
+            <div class="socials-wrapper" animated="fade staggerChild">
 
               <a href="#" class="social-icon">
                 <img src="/assets/images/icons/facebook-outlined.png" alt="">
@@ -653,12 +662,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/createjs/2015.11.26/createjs.min.js"></script>
 
+<script src="/assets/js/preloader.js"></script>
 <script src="/assets/js/header.js"></script>
 <script src="/assets/js/roller.js"></script>
 <script src="/assets/js/script.js"></script>
 <script src="/assets/js/background-animation.js"></script>
 <script src="/assets/js/moving-eye.js"></script>
 <script src="/assets/js/scrolltrigger.js"></script>
+<script src="/assets/js/animateView.js"></script>
+
 
 </html>

@@ -505,6 +505,7 @@ section.banner .container .wrapper .block .card .content-block h6 {
 }
 section.banner .container .wrapper .block .card .content-block .bottom-content {
   display: flex;
+  padding-left: 0.625em;
 }
 section.banner .container .wrapper .block .card .content-block .bottom-content p {
   font-size: 1.125em;
@@ -595,6 +596,11 @@ section.projects {
 @media (max-width: 900px) {
   section.projects {
     padding: 0.625em 0.625em 12.5em 0.625em;
+  }
+}
+@media (max-width: 900px) and (max-width: 400px) {
+  section.projects {
+    padding-bottom: 9.375em;
   }
 }
 section.projects .container {
@@ -758,7 +764,12 @@ section.about-me {
 }
 @media (max-width: 900px) {
   section.about-me {
-    padding: 0.625em;
+    padding: 0.625em 0.625em 12.5em 0.625em;
+  }
+}
+@media (max-width: 900px) and (max-width: 400px) {
+  section.about-me {
+    padding-bottom: 9.375em;
   }
 }
 section.about-me .container {
@@ -960,6 +971,7 @@ section.about-me .about-img-wrapper {
   max-width: 0deg;
   height: auto;
   box-shadow: 7px 10px 26px -6px rgba(0, 0, 0, 0.5);
+  will-change: transform, opacity;
 }
 section.about-me .about-img-wrapper.img1 {
   position: absolute;
@@ -972,6 +984,7 @@ section.about-me .about-img-wrapper.img1 {
   max-width: 18.75em;
   height: 25em;
   box-shadow: 7px 10px 26px -6px rgba(0, 0, 0, 0.5);
+  will-change: transform, opacity;
 }
 @media (max-width: 400px) {
   section.about-me .about-img-wrapper.img1 {
@@ -992,6 +1005,7 @@ section.about-me .about-img-wrapper.img2 {
   max-width: 25em;
   height: 18.75em;
   box-shadow: 7px 10px 26px -6px rgba(0, 0, 0, 0.5);
+  will-change: transform, opacity;
 }
 @media (max-width: 900px) {
   section.about-me .about-img-wrapper.img2 {
@@ -1017,6 +1031,7 @@ section.about-me .about-img-wrapper.img3 {
   max-width: 25em;
   height: 18.75em;
   box-shadow: 7px 10px 26px -6px rgba(0, 0, 0, 0.5);
+  will-change: transform, opacity;
 }
 @media (max-width: 900px) {
   section.about-me .about-img-wrapper.img3 {
@@ -1042,6 +1057,7 @@ section.about-me .about-img-wrapper.img4 {
   max-width: 25em;
   height: 25em;
   box-shadow: 7px 10px 26px -6px rgba(0, 0, 0, 0.5);
+  will-change: transform, opacity;
 }
 @media (max-width: 400px) {
   section.about-me .about-img-wrapper.img4 {
@@ -1062,6 +1078,7 @@ section.about-me .about-img-wrapper.img5 {
   max-width: 18.75em;
   height: 25em;
   box-shadow: 7px 10px 26px -6px rgba(0, 0, 0, 0.5);
+  will-change: transform, opacity;
 }
 @media (max-width: 900px) {
   section.about-me .about-img-wrapper.img5 {
@@ -1088,6 +1105,7 @@ section.about-me .about-img-wrapper.img6 {
   max-width: 25em;
   height: 25em;
   box-shadow: 7px 10px 26px -6px rgba(0, 0, 0, 0.5);
+  will-change: transform, opacity;
 }
 @media (max-width: 400px) {
   section.about-me .about-img-wrapper.img6 {
@@ -1224,7 +1242,7 @@ footer .container .wrapper .heading h2 {
   }
 }
 footer .container .wrapper .line {
-  width: 15%;
+  width: 20%;
   height: 0.125em;
   background-color: #c5c5c5;
   margin: 5em 0;
@@ -1240,19 +1258,21 @@ footer .container .wrapper .block {
   justify-content: center;
   align-items: center;
 }
-footer .container .wrapper .block .button-container {
-  height: 100%;
-  margin-bottom: 2.5em;
-}
-footer .container .wrapper .block .button-container .pushable {
+footer .container .wrapper .block .pushable {
+  display: inline-block;
+  text-decoration: none;
   background: hsl(340, 100%, 32%);
   border-radius: 1.25em;
   border: none;
   padding: 0;
   cursor: pointer;
   outline-offset: 0.25em;
+  transition: background 0.3s ease;
 }
-footer .container .wrapper .block .button-container .front {
+footer .container .wrapper .block .pushable:hover {
+  background: hsl(340, 100%, 40%);
+}
+footer .container .wrapper .block .pushable .front {
   display: block;
   padding: 0.625em 1.25em;
   border-radius: 1em;
@@ -1260,8 +1280,13 @@ footer .container .wrapper .block .button-container .front {
   background: hsl(345, 100%, 47%);
   color: white;
   transform: translateY(-6px);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
-footer .container .wrapper .block .button-container .pushable:active .front {
+footer .container .wrapper .block .pushable .front:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.2);
+}
+footer .container .wrapper .block .pushable:active .front {
   transform: translateY(-2px);
 }
 footer .container .wrapper .block .socials-container {
@@ -1282,6 +1307,10 @@ footer .container .wrapper .block .socials-container .socials-wrapper .social-ic
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+footer .container .wrapper .block .socials-container .socials-wrapper .social-icon img:hover {
+  scale: 1.2;
+  transition: scale 0.2s ease;
 }
 
 * {
