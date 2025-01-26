@@ -73,10 +73,11 @@ section.projects {
             padding: em(20);
             background-color: #FCFCFC;
             border: em(1) solid $white;
-            gap: em(20);
+            gap: em(30);
             box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
             @include md {
               min-height: em(600);
+              gap: em(20);
               @include sm {
                 flex-direction: column;
                 max-height: 100%;
@@ -135,6 +136,7 @@ section.projects {
 
                 @include sm{
                   margin-bottom: em(20);
+                  gap: em(10);
                 }
               }
             }

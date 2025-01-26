@@ -24,31 +24,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // IMAGE COLLAGE ANIMATION
-  const imgWrappers = document.querySelectorAll(".about-img-wrapper");
+const imgWrappers = document.querySelectorAll(".about-img-wrapper");
+const isMobile = window.matchMedia("(max-width: 768px)").matches;
+const start = isMobile ? "top 90%" : "top center"; 
+const end = isMobile ? "top 80%" : "center 90%";
 
-  gsap.fromTo(
-    imgWrappers,
-    {
-      opacity: 0,
-      x: (i) => (Math.random() < 0.5 ? -300 : 300),
-      y: (i) => (Math.random() < 0.5 ? -200 : 200),
+gsap.fromTo(
+  imgWrappers,
+  {
+    opacity: 0,
+    x: (i) => (Math.random() < 0.5 ? -300 : 300),
+    y: (i) => (Math.random() < 0.5 ? -200 : 200),
+  },
+  {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    duration: 1,
+    ease: "power3.inOut",
+    stagger: 0.05,
+    scrollTrigger: {
+      trigger: "section.about-me",
+      start: start,
+      end: end,
     },
-    {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      duration: 1,
-      ease: "power3.inOut",
-      stagger: 0.05,
-      scrollTrigger: {
-        trigger: "section.about-me",
-        start: "top center",
-        end: "center 90%",
-        scrub: true,
-      },
-    }
-  );
+  }
+);
 
   imgWrappers.forEach(imgWrapper => {
     const matrix = window.getComputedStyle(imgWrapper).transform;

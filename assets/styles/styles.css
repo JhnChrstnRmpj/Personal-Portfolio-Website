@@ -662,12 +662,13 @@ section.projects .container .wrapper .project-block .card-block .project-card {
   padding: 1.25em;
   background-color: #FCFCFC;
   border: 0.0625em solid #EEEEEE;
-  gap: 1.25em;
+  gap: 1.875em;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
 }
 @media (max-width: 900px) {
   section.projects .container .wrapper .project-block .card-block .project-card {
     min-height: 37.5em;
+    gap: 1.25em;
   }
 }
 @media (max-width: 900px) and (max-width: 400px) {
@@ -729,6 +730,7 @@ section.projects .container .wrapper .project-block .card-block .project-card .c
 @media (max-width: 400px) {
   section.projects .container .wrapper .project-block .card-block .project-card .card-description .description-tags {
     margin-bottom: 1.25em;
+    gap: 0.625em;
   }
 }
 section.projects .container .wrapper .project-block .card-block .project-card .card-image {
@@ -869,15 +871,17 @@ section.about-me .container .wrapper .row .block-right .tablet-description {
     display: flex;
     position: absolute;
     z-index: 100;
-    top: 42%;
+    top: 40%;
     opacity: 0.6;
     line-height: 300%;
+    font-size: 1.125em;
   }
 }
 @media (max-width: 900px) and (max-width: 400px) {
   section.about-me .container .wrapper .row .block-right .tablet-description {
-    top: 35%;
+    top: 36%;
     left: 0.625em;
+    font-size: 0.9375em;
   }
 }
 section.about-me .container .wrapper .row .block-right .tablet-description2 {

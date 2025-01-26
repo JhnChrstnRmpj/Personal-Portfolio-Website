@@ -106,13 +106,15 @@ section.about-me {
               display: flex;
               position: absolute;
               z-index: 100;
-              top: 42%;
+              top: 40%;
               opacity: 0.6;
               line-height: 300%;
+              font-size: em(18);
 
               @include sm {
-                top: 35%;
+                top: 36%;
                 left: em(10);
+                font-size: em(15);
               }
             }
           }
