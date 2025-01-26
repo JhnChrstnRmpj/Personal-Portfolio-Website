@@ -24,9 +24,9 @@ $referenceWidth: 1920;
   text-decoration: none;
   outline: none;
   scroll-behavior: smooth;
-  ::-webkit-scrollbar {
-    display: none;
-  }
+  // ::-webkit-scrollbar {
+  //   display: none;
+  // }
 }
 
 *[animated] {
@@ -37,6 +37,7 @@ $referenceWidth: 1920;
 @import "./components/components";
 
 * {
+  // cursor: none;
   font-family: $primaryFont;
   font-size: 16px;
   color: $black;
@@ -52,13 +53,13 @@ $referenceWidth: 1920;
 }
 
 body {
-  background-color: #EAE1D6;
+  background-color: #EEEEEE;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
 
-  ::selection {
-    color: $black;
-    background-color: $white;
-  }
+main{
+  width: 100%;
 }

@@ -1,33 +1,157 @@
 header {
-  position: relative;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+
   & .container {
     width: 100%;
     height: 100%;
-    padding: em(20);
+    max-width: em(1650);
+    padding: em(20) em(40) 0 ;
     display: flex;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(4px);
+    transition: background-color 0.3s ease;
+
+    @include sm {
+      padding: em(10) em(10) 0;
+    }
 
     & .wrapper {
-      background-color: #EAEAE9;
       width: 100%;
-      // max-width: em(600);
       padding: em(10) em(30);
-      border: em(2) solid #fff;
+      border-radius: em(40);
+      background-color: #EEEFF2;
+      box-shadow: 0px 10px 15px -3px rgba(23, 22, 22, 0.1);
+      border: 1px solid #00000010;
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+      @include sm {
+        padding: em(4) em(8);
+      }
 
-      & nav {
+      & .web-nav {
         height: em(50);
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @include sm{
+          height: em(30);
+        }
+
+        & .leftNav {
+          display: flex;
+          justify-content: center;
+
+          & img {
+            width: em(40);
+            height: em(40);
+            object-fit: cover;
+            filter: invert(1);
+            
+            @include sm {
+              object-fit: cover;
+              width: em(20);
+              height: em(20);
+              margin-left: em(10);
+            }
+          }
+        }
 
         & .rightNav {
           display: flex;
           gap: em(30);
+          @include sm {
+            display: none;
+          }
 
           & p {
             font-weight: 400;
           }
+        }
+
+        & .mobile-right-nav {
+          display: none;
+          @include sm {
+            display: flex;
+            justify-content: center;
+            margin-right: em(10);
+          }
+          & img {
+            width: em(20);
+            height: em(20);
+            object-fit: cover;
+          }
+        }
+
+      }
+
+      & .mobile-nav-container {
+        opacity: 0;
+        z-index: -1;
+        transition: all 0.1s cubic-bezier(.17,.67,.83,.67);
+        pointer-events: none;
+
+        &.active {
+          opacity: 1;
+          transition: all 0.1s ease-in;
+          display: flex;
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background-color: #FFF;
+          pointer-events: all;
+        }
+
+        .mobile-nav-wrapper {
+          position: absolute;
+          max-width: em(355);
+          width: 100%;
+          transition: all 0.01s ease-in;
+          z-index: 1;
+          left: em(10);
+          
+          &.navActive {
+            position: absolute;
+            height: 0;
+            top: em(30);
+            left: em(10);
+            background-color: #FCFCFC;
+            border: em(1) solid $white;
+            border-radius: em(30);
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+            z-index: 1;
+            transition: all 0.1s ease;
+          }
+
+          & .mobile-nav-menu {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+          }
+
+          // & .mobile-nav-images{ 
+          //   position: relative;
+          //   width: 100%;
+          //   height: 100vh;
+          //   top: em(20);
+          //   background-color: red;
+
+          //   & .img-wrapper {
+          //     object-fit: contain;
+              
+          //   }
+          // }
         }
       }
     }

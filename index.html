@@ -4,122 +4,674 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link rel="stylesheet" href="/assets/styles/styles.css">
-  <title>Home</title>
+  <title>Jhon Christian | Web Developer</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/browser-logo/favicon-32x32.png" disabled>
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/browser-logo/favicon-16x16.png">
+  <link rel="shortcut icon" href="assets/images/browser-logo/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/images/browser-logo/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/browser-logo/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/images/browser-logo/android-chrome-512x512.png">
+  <link rel="manifest" href="assets/images/browser-logo/site.webmanifest">
+
+
 </head>
 
-<body style="background-color: #0A0A0A;">
+<body>
 
-  <header>
+  <header animated="fade slideY" yOffset="-50" delay="0.5">
     <div class="container">
       <div class="wrapper">
 
-        <nav>
+        <nav class="web-nav">
           <div class="leftNav">
-            <a href="">
-              <span>LOGO HERE</span>
+            <a href="#">
+              <img src="/assets/images/icons/logo.png" alt="profile-picture">
             </a>
           </div>
 
           <div class="rightNav">
-            <a href="#">
+            <a href="#projects">
               <span>MY WORK</span>
             </a>
-            <a href="#">
+            <a href="#about">
               <span>ABOUT ME</span>
             </a>
-            <a href="#">
+            <a href="#footer">
               <span>REACH OUT</span>
             </a>
           </div>
+          <div class="active-tags">
+            <div class="circle"></div>
+            <h6>Available for work</h6>
+          </div>
+
+          <div class="mobile-right-nav" id="hamburger">
+            <img src="/assets/images/icons/hamburger.png" alt="hamburger">
+          </div>
         </nav>
 
+        <div class="mobile-nav-container" id="mobile-container">
+          <div class="mobile-nav-wrapper" id="mobileMenu">
+            <div class="mobile-nav-menu">
+              <a href="">
+                <h5>MY WORK</h5>
+              </a>
+              <a href="">
+                <h5>ABOUT ME</h5>
+              </a>
+              <a href="">
+                <h5>REACH OUT</h5>
+              </a>
+            </div>
+            <!-- <div class="mobile-nav-images">
+              <div class="moving-img-wrapper">
+                <img src="/assets/images/8R.JPG" alt="">
+              </div>
+            </div> -->
+          </div>
+        </div>
+
       </div>
+
+    </div>
     </div>
   </header>
 
-  <main>
-    <section class="bentoGrid">
+  <main id="content">
+
+    <section class="banner" id="banner" animated="fade slideY" delay="1">
+
       <div class="container">
         <div class="wrapper">
 
-          <div class="card card-1">
-            <div class="about-card">
-              <h1>LOREM IPSUM </h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. </p>
+          <div class="block">
+
+            <div class="card">
+              <!-- <div class="ink"></div> -->
+              <div class="content-block">
+
+                <div class="center-content">
+
+                  <div class="description-wrapper">
+                    <h1>Jhon Christian</h1>
+                    <h5>I'm a <span>Web Developer</span>!</h5>
+                  </div>
+                </div>
+
+                <div class="bottom-content">
+                  <p>
+                    I've been a
+                    passionate gamer, dreaming of the day I'd
+                    create a game that people would love.
+                    This dream fuels my journey in
+                    Information Technology, pushing me to
+                    become a skilled developer. I'm excited to share what
+                    I learn with others and work towards
+                    turning my childhood dream into reality.
+                  </p>
+                </div>
+              </div>
+
+              <div class="right-block">
+                <img src="/assets/images/banner-avatar.png" alt="">
+                <div class='eye-container'>
+                  <div class="eye-wrapper">
+                    <div class='eye left-eye'></div>
+                    <div class='eye right-eye'></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <section class="offers" id="offers">
+      <div class="scroll-trigger-container">
+        <div class="scroll-trigger-wrapper">
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
             </div>
           </div>
 
-          <div class="card card-2">
-            <div class="tape">
-              <div class="text-carousel focusin">
+          <div class="carousel-text">
+            <p>Web Developer</p>
+          </div>
 
-                <div class="carousel-text">
-                  <div class="box-space"></div>
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>WordPress Developer</p>
+          </div>
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>OLA Developer</p>
+          </div>
+
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>Web Developer</p>
+          </div>
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>WordPress Developer</p>
+          </div>
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>OLA Developer</p>
+          </div>
+
+        </div>
+        <div class="scroll-trigger-wrapper">
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>Web Developer</p>
+          </div>
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>WordPress Developer</p>
+          </div>
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>OLA Developer</p>
+          </div>
+
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>Web Developer</p>
+          </div>
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>WordPress Developer</p>
+          </div>
+
+          <div class="carousel-text">
+            <div class="box-space">
+              <p>-</p>
+            </div>
+          </div>
+
+          <div class="carousel-text">
+            <p>OLA Developer</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="wrapper">
+
+          <div class="project-block">
+            <div class="project-headline">
+              <div class="project-headings" animated="fade slideY">
+                <h6>FEATURED PROJECTS</h6>
+              </div>
+              <h2 animated="fade slideY">These are my recent works!</h2>
+            </div>
+
+            <div class="card-block">
+
+              <div class="project-card" animated="fade slideY" yOffset="50">
+
+                <div class="card-description">
+                  <div class="project-card-icon">
+
+                    <div class="icon-wrapper">
+                      <img src="/assets/images/logo/codeux-logo.png" alt="">
+                    </div>
+                    <h3>CodeUX Creatives</h3>
+
+                  </div>
+
+                  <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur alias dolor repellendus nemo
+                    unde aut, aperiam dolorem eveniet, harum corrupti magni ex fugiat, laborum doloribus illo
+                    necessitatibus rem blanditiis dicta.</p>
+                  <div class="description-tags">
+                    <div class="tags">
+                      WordPress
+                    </div>
+                    <div class="tags">
+                      GitHub
+                    </div>
+                    <div class="tags">
+                      HTML
+                    </div>
+                    <div class="tags">
+                      Git
+                    </div>
+                    <div class="tags">
+                      SASS
+                    </div>
+                    <div class="tags">
+                      Javascript
+                    </div>
+                    <div class="tags">
+                      GSAP
+                    </div>
+                  </div>
                 </div>
 
-                <div class="carousel-text">
-                  <p>VERSION CONTROL</p>
+                <div class="card-image">
+                  <img src="/assets/images/project-image-codeux2.png" alt="">
+                </div>
+              </div>
+
+              <div class="project-card" animated="fade slideY" yOffset="50">
+
+                <div class="card-description">
+                  <div class="project-card-icon">
+                    <div class="icon-wrapper">
+                      <img src="/assets/images/logo/pos-logo.png" alt="">
+                    </div>
+                    <span class="card-title">Inventory Management System</span>
+                  </div>
+                  <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur alias dolor repellendus nemo
+                    unde aut, aperiam dolorem eveniet, harum corrupti magni ex fugiat, laborum doloribus illo
+                    necessitatibus rem blanditiis dicta.</p>
+                  <div class="description-tags">
+                    <div class="tags">
+                      WordPress
+                    </div>
+                    <div class="tags">
+                      GitHub
+                    </div>
+                    <div class="tags">
+                      HTML
+                    </div>
+                    <div class="tags">
+                      Git
+                    </div>
+                    <div class="tags">
+                      SASS
+                    </div>
+                    <div class="tags">
+                      Javascript
+                    </div>
+                    <div class="tags">
+                      GSAP
+                    </div>
+                  </div>
                 </div>
 
-                <div class="carousel-text">
-                  <div class="box-space"></div>
+                <div class="card-image">
+                  <img src="/assets/images/inventory-card-image.png" alt="" style="border: 1px solid #E0E1E5;">
+                </div>
+              </div>
+
+              <div class="project-card" animated="fade slideY" yOffset="50">
+
+                <div class="card-description">
+                  <div class="project-card-icon">
+                    <div class="icon-wrapper">
+                      <img src="/assets/images/logo/inquiro-logo.svg" alt="">
+                    </div>
+                    <span class="card-title">Inquiro Ph</span>
+                  </div>
+                  <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur alias dolor repellendus nemo
+                    unde aut, aperiam dolorem eveniet, harum corrupti magni ex fugiat, laborum doloribus illo
+                    necessitatibus rem blanditiis dicta.</p>
+                  <div class="description-tags">
+                    <div class="tags">
+                      WordPress
+                    </div>
+                    <div class="tags">
+                      GitHub
+                    </div>
+                    <div class="tags">
+                      HTML
+                    </div>
+                    <div class="tags">
+                      Git
+                    </div>
+                    <div class="tags">
+                      SASS
+                    </div>
+                    <div class="tags">
+                      Javascript
+                    </div>
+                    <div class="tags">
+                      GSAP
+                    </div>
+                  </div>
                 </div>
 
-                <div class="carousel-text">
-                  <p>WORDPRESS DEVELOPMENT</p>
+                <div class="card-image">
+                  <img src="/assets/images/project-image-inquiro2.png" alt="">
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="about-me" id="about">
+      <div class="container">
+        <div class="wrapper">
+
+          <div class="about-headline">
+            <h6 animated="fade slideY">ABOUT ME</h6>
+            <h2 animated="fade slideY">If you wanna know more about me :)</h2>
+          </div>
+
+          <div class="row row2" style="margin-bottom: 20px;">
+            <div class="mason-block block-left">
+              <h6>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque cupiditate debitis ratione dolorem
+                quibusdam laboriosam magni. Earum nulla laudantium eius facilis explicabo molestias consequuntur placeat
+                cumque, maxime odio, necessitatibus perspiciatis!
+              </h6>
+            </div>
+
+            <div class="mason-block block-right">
+
+              <div class="about-img-wrapper img1">
+                <img src="/assets/images/me/aboutme-1.JPG" alt="">
+              </div>
+
+              <div class="about-img-wrapper img2">
+                <img src="/assets/images/me/aboutme-2.JPG" alt="">
+              </div>
+
+              <div class="about-img-wrapper img3">
+                <img src="/assets/images/me/aboutme-3.JPG" alt="">
+              </div>
+
+              <div class="about-img-wrapper img4">
+                <img src="/assets/images/me/aboutme-4.JPG" alt="">
+              </div>
+
+              <div class="about-img-wrapper img5">
+                <img src="/assets/images/me/aboutme-5.JPG" alt="">
+              </div>
+
+              <div class="about-img-wrapper img6">
+                <img src="/assets/images/me/aboutme-6.JPG" alt="">
+              </div>
+
+              <div class="tablet-description">
+                <h6>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque cupiditate debitis ratione dolorem
+                  quibusdam laboriosam magni. Earum nulla laudantium eius facilis explicabo molestias consequuntur
+                  placeat
+                  cumque, maxime odio, necessitatibus perspiciatis!
+                </h6>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="row row1">
+            <div class="mason-block block-left" animated="fade scale">
+              <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque cupiditate debitis ratione dolorem
+                quibusdam laboriosam magni.<br><br> Earum nulla laudantium eius facilis explicabo molestias consequuntur
+                placeat
+                cumque, maxime odio, necessitatibus perspiciatis!
+              </h6>
+            </div>
+            <div class="mason-block block-right" animated="fade scale">
+
+              <div class="block-wrapper">
+
+                <div class="card-header">
+                  <h2>Tech | use</h2>
                 </div>
 
-                <div class="carousel-text">
-                  <div class="box-space"></div>
+                <div class="carousel-card">
+                  <div class="carouselContainer" style="margin-bottom: 40px;">
+                    <div class="carouselWrapper iconCarousel" data-direction="left">
+
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/figma-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/framer-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/css-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/git-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/html-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/javascript-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/next-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/git-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/openai-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/sass-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/github-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/slack-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/react-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/vsc-logo.svg" alt="">
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="carouselContainer">
+                    <div class="carouselWrapper iconCarousel" data-direction="right">
+
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/javascript-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/html-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/vsc-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/sass-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/slack-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/framer-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/git-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/react-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/github-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/figma-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/openai-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/css-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/next-logo.svg" alt="">
+                      </div>
+                      <div class="stack-wrapper">
+                        <img src="/assets/images/logo/git-logo.svg" alt="">
+                      </div>
+
+                    </div>
+                  </div>
                 </div>
 
-                <div class="carousel-text">
-                  <p>OLA DEVELOPMENT</p>
+                <div class="tablet-description2">
+                  <h6>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque cupiditate debitis ratione dolorem
+                    quibusdam laboriosam magni. Earum nulla laudantium eius facilis explicabo molestias consequuntur
+                    placeat
+                    cumque, maxime odio, necessitatibus perspiciatis!
+                  </h6>
                 </div>
 
-                <div class="carousel-text">
-                  <div class="box-space"></div>
-                </div>
-
-                <div class="carousel-text">
-                  <p>WEB DEVELOPMENT</p>
-                </div>
-
-                <div class="carousel-text">
-                  <div class="box-space"></div>
-                </div>
-
-                <div class="carousel-text">
-                  <p>EMAIL DEVELOPMENT</p>
-                </div>
 
               </div>
+
             </div>
           </div>
 
-
-          <div class="card card-3">3</div>
-          <div class="card-4">
-            <div class="smallCard smallCard-1">4</div>
-            <div class="smallCard smallCard-2">5</div>
-            <div class="smallCard smallCard-3">6</div>
-            <div class="smallCard smallCard-4">7</div>
-          </div>
-          <div class="card card-5">8</div>
-          <div class="card card-6">9</div>
-          <div class="card card-7">10 </div>
         </div>
       </div>
     </section>
   </main>
 
+  <footer id="footer">
+
+    <div class="container">
+      <div class="wrapper">
+
+        <div class="heading" animated="fade slideY">
+          <h2>Let's work <br> together!</h2>
+        </div>
+
+        <div class="line" animated="fade slideY"></div>
+
+        <div class="block" animated="fade slideY">
+
+          <div class="button-container" animated="fade slideY">
+            <a class="pushable" href="mailto:rempajo30113@gmail.com">
+              <span class="front">
+                Connect with me!
+              </span>
+            </a>
+          </div>
+
+
+          <div class="socials-container">
+            <div class="socials-wrapper" animated="fade staggerChild">
+
+              <a href="#" class="social-icon">
+                <img src="/assets/images/icons/facebook-outlined.png" alt="">
+              </a>
+              <a href="#" class="social-icon">
+                <img src="/assets/images/icons/instagram-outlined.png" alt="">
+              </a>
+              <a href="#" class="social-icon">
+                <img src="/assets/images/icons/linkedin-outlined.png" alt="">
+              </a>
+              <a href="#" class="social-icon">
+                <img src="/assets/images/icons/email-outlined.png" alt="">
+              </a>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-<script src="assets/js/roller.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/createjs/2015.11.26/createjs.min.js"></script>
+
+<script src="/assets/js/preloader.js"></script>
+<script src="/assets/js/header.js"></script>
+<script src="/assets/js/roller.js"></script>
+<script src="/assets/js/script.js"></script>
+<script src="/assets/js/background-animation.js"></script>
+<script src="/assets/js/moving-eye.js"></script>
+<script src="/assets/js/scrolltrigger.js"></script>
+<script src="/assets/js/animateView.js"></script>
+
 
 </html>

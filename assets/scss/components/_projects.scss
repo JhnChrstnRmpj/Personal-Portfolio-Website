@@ -1,0 +1,168 @@
+section.projects {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  padding: em(40) em(40) em(200) em(40);
+  display: flex;
+  justify-content: center;
+
+  @include md {
+    padding: em(10) em(10) em(200) em(10);
+
+    @include sm{
+      padding-bottom: em(150);
+    }
+  }
+
+  & .container {
+    width: 100%;
+    height: 100%;
+    max-width: em(1600);
+    min-height: em(900);
+
+    & .wrapper {
+      width: 100%;
+      height: 100%;
+
+      .project-block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .project-headline {
+          width: 100%;
+          max-width: em(800);
+          display: flex;
+          flex-direction: column;
+          margin-bottom: em(50);
+
+          & h6 {
+            margin-bottom: em(10);
+          }
+
+          & h2 {
+            font-size: em(80);
+            font-weight: 600;
+            @include sm{
+              font-size: em(40);
+            }
+          }
+        }
+
+        .card-block {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          gap: em(100);
+
+          @include sm {
+            gap: em(30)
+          }
+
+          .project-card {
+            border-radius: em(30);
+            width: 100%;
+            height: 100%;
+            min-height: em(900);
+            max-width: em(1600);
+            display: flex;
+            flex-direction: row;
+            padding: em(20);
+            background-color: #FCFCFC;
+            border: em(1) solid $white;
+            gap: em(20);
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+            @include md {
+              min-height: em(600);
+              @include sm {
+                flex-direction: column;
+                max-height: 100%;
+              }
+            }
+  
+            .card-description {
+              width: 30%;
+              padding: em(20) 0 em(20) em(20);  
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              @include md {
+                padding: em(0);
+                width: 60%;
+                gap: em(40);
+
+                @include sm {
+                  width: 100%;
+                }
+              }
+
+              & .project-card-icon {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                object-fit: cover;
+
+                & .icon-wrapper {
+                  max-width: em(60);
+                  height: em(60);
+                  & img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                  }
+                }
+
+                & .card-title {
+                  font-size: em(40);
+                  font-weight: 600;
+                  opacity: 0.8;
+                  line-height: 120%;
+                }
+              }
+              & p {
+                line-height: 200%;
+              }
+
+              & .description-tags {
+                display: flex;
+                width: 100%;
+                gap: em(20);
+                overflow: hidden;
+                flex-wrap: wrap;
+
+                @include sm{
+                  margin-bottom: em(20);
+                }
+              }
+            }
+  
+            .card-image {
+              position: relative;
+              width: 70%;
+              min-height: 100%;
+              border-radius: em(30);
+
+              @include sm {
+                width: 100%;
+              }
+  
+              & img {
+                width: 100%;
+                height: 100%;
+                border-radius: em(20);
+                object-fit: cover;
+
+                @include sm {
+                  min-height: em(300);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

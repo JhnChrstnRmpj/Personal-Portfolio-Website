@@ -1,0 +1,51 @@
+section.offers {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: em(250) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include sm {
+    padding: em(150) 0;
+  }
+  
+  & .scroll-trigger-container {
+    background-color: #FCFCFC;
+    width: 100%;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+
+    & .scroll-trigger-wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & .carousel-text {
+        height: 100%;
+        margin: 0 em(20);
+        display: inline-block;
+
+        & p {
+          text-transform: uppercase;
+          font-size: em(100);
+          font-weight: 700;
+          letter-spacing: em(2);
+          white-space: nowrap;
+          @include sm {
+            font-size: em(50);
+          }
+        }
+
+        & .box-space {
+          height: em(80);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
